@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "airbnb",
+    "env",
+    "stage-1",
+    "react",
+    "es2015"
+  ],
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-es2015-arrow-functions"
+  ]
+}

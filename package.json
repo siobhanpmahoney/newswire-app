@@ -1,0 +1,38 @@
+{
+  "name": "react-container-components-lab",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "jsdom": "^9.9.1",
+    "mocha": "^3.2.0",
+    "react-scripts": "^1.0.7",
+    "react-test-renderer": "^16.0.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-airbnb": "^2.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "chai": "^3.5.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "es6-promise": "^4.2.4",
+    "expect": "^21.2.1",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.0.0 ",
+    "react-dom": "^16.0.0 ",
+    "sinon": "^1.17.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "mocha -w test/helpers.js test/*.js",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./",
+    "test:watch": "npm run test -- --watch",
+    "eject": "react-scripts eject"
+  }
+}
