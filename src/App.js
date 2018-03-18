@@ -33,7 +33,7 @@ class App extends Component {
         if (!this.state.articles.find((a) => a.title === newArt.title)) {
           this.setState((state, props) => {
             return {
-              articles: [...state.articles, newArt]
+              articles: [newArt, ...state.articles]
             }
           })
         }
@@ -50,9 +50,10 @@ class App extends Component {
     }
 
     handleSaveArticleToReadLater = (art) => {
+      let currentReadLaterState = this.state.readLater.slice(0)
         if (!this.state.readLater.includes(art)) {
           this.setState({
-              readLater: [...this.state.readLater, art],
+              readLater: [...currentReadLaterState, art],
           });
         }
     }
@@ -61,14 +62,16 @@ class App extends Component {
 
     handleReadArticle = (art) => {
       if (this.state.readLater.length < 15) {
+        let readNow = [...this.state.readNow, art];
         this.setState({
-          readNow: [...this.state.readNow, art],
+          readNow: readNow,
         });
+
+        if (this.state.readLater.find((article) => article.title === art.title)) {
+          this.handleDeleteArticle(art)
+        }
         const win = window.open(art.url, '_blank');
         win.focus();
-        if (this.state.readLater.includes(art)) {
-          this.handleDeleteArticle
-        }
       }
       else {
         alert("Looks like you've hit your limit of 15 free articles this month. Subscribe now for unlimited access to our content.")
@@ -80,7 +83,7 @@ class App extends Component {
     }
 
     handleDeleteArticle = (article) => {
-      const truncatedList = this.state.readLater
+      const truncatedList = this.state.readLater.slice(0)
       truncatedList.splice(truncatedList.indexOf(article), 1)
       this.setState({
         readLater: truncatedList
@@ -90,27 +93,29 @@ class App extends Component {
     render() {
         return (
             <div className="news-wire-top wrapper">
-            <div className="box header"><h1>NYTimes NewsWire</h1></div>
+            <div className="box header">NYTimes NewsWire</div>
                 <div className="news-wire content">
                     <h2 className="news-wire-title">Latest Articles from the New York Times</h2>
                     <ArticleContainer
                         articles={this.state.articles}
                         handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
                 </div>
-          
+
                   <div className="read-later box sidebar">
                       <h4>Saved Articles</h4>
 
                       <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
 
-                  </div>
 
-                  <div className="read-now">
-                      <h4 className="view-history">Viewing History</h4>
+<div>
+    <h4 className="viewHistory">Viewing History</h4>
+    {this.state.readNow.length >= 1 &&
+          <ReadNowContainer readNow={this.state.readNow} />
+}
+      </div>
+</div>
 
-                      <ReadNowContainer readNow={this.state.readNow} />
 
-                  </div>
 
             </div>
         );
