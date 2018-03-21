@@ -61,11 +61,13 @@ class App extends Component {
 
 
     handleReadArticle = (art) => {
-      if (this.state.readLater.length < 15) {
+      if (this.state.readNow.length < 15) {
+
         let readNow = [...this.state.readNow, art];
         this.setState({
           readNow: readNow,
         });
+
 
         if (this.state.readLater.find((article) => article.title === art.title)) {
           this.handleDeleteArticle(art)
@@ -74,6 +76,7 @@ class App extends Component {
         win.focus();
       }
       else {
+        console.log(this.state.readNow.length)
         alert("Looks like you've hit your limit of 15 free articles this month. Subscribe now for unlimited access to our content.")
       }
     }
@@ -91,6 +94,7 @@ class App extends Component {
     }
 
     render() {
+      console.log(this.state.readNow.length)
         return (
             <div className="news-wire-top wrapper">
             <div className="box header">NYTimes NewsWire</div>
@@ -102,13 +106,14 @@ class App extends Component {
                 </div>
 
                   <div className="read-later box sidebar">
-                      <h4>Saved Articles</h4>
+                    <div className="readLaterSection">
+                      <span className="readLaterHeader">Saved Articles</span>
 
                       <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
+                    </div>
 
-
-<div>
-    <h4 className="viewHistory">Viewing History</h4>
+<div className="readNowSection">
+    <span className="viewHistoryHeader">Viewing History</span>
     {this.state.readNow.length >= 1 &&
           <ReadNowContainer readNow={this.state.readNow} />
 }

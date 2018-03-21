@@ -3,8 +3,9 @@ import ReadNowArticles from './ReadNowArticles';
 
 const ReadNowContainer = ({ readNow }) => (
     <div className="readNow">
-
+      <ol>
         {readNow.map((article, index) => <ReadNowArticles readNowArticle={article} key={article.title} />)}
+      </ol>
     </div>
   );
 

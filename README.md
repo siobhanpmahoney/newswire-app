@@ -1,50 +1,52 @@
-# React Container Components
+# NYTimes NewsWire
 
-## Overview
-In this lab, we will practice building container components. By the end of the lab you will have:
-1. Practiced Building Container Components.
-2. Gained concrete experience combining presentational and container components to separate the data and presentation layers.
+New York Times article feed with real-time updates, read history tracker, and bookmarking tool.
 
-## Oh, To Be a Critic!
-![Thumbs Down](https://s3.amazonaws.com/ezmiller/public/images/thumbs-down-kevin.gif)
+## Usage and Features
 
-Movie critics can be harsh, but it's a blast to read what they write. For this lab, imagine that you've been hired to work on a web application devoted to movie reviews. The app will draw its review content from the _New York Times_, which has provided a public, queryable API for their content.
+* Live feed of NYTimes content that updates every 30 seconds with article details, including full story link, title, section, and abstract
+* Tracks and renders viewing history
+* Bookmarking tool that captures and renders information each saved item
+* Automatically updates "Saved Articles" and "Viewing History" lists accordingly as viewers access saved articles
+* Prevents article duplication in "Saved Articles"
 
-For your part, you've been asked to produce two container components that will wrap a single presentation component, `<MovieReviews>`, which lists a series of movie reviews on the page.
+## Prerequisites
 
-The two container components you've been asked to create will use this single presentational component in different ways. The first, `<LatestMovieReviewsContainer>`, will fetch a list of the most recent reviews and display them. The second, `<SearchableMovieReviewsContainer>`, will provide a searchable interface allowing the user to enter a search term and then receive a list of reviews that match the search term(s).
+### Frontend:
+* React
+* Isomorphic-Fetch API
 
-You can tackle these components in whatever order you wish, but it might make sense to start with the more static (and thus simpler) `<LatestMovieReviewsContainer>`. As with other labs, you can use the tests as a specification for the components, but here are the main points that you should follow as you work:
+### APIs
 
-#### `<MovieReviews>`
-* Your `MovieReviews` component should be stateless and functional.
-* You are free to lay out each review as you like using the data that the API returns, but make sure that the component outputs a top-level element with the class `review-list` and that each review is wrapped by an element with class `review`.
+* #### _New York Times_ API
 
-#### `<LatestMovieReviewsContainer>` and `<SearchableMovieReviewsContainer>`
-* Both container components should be class components that maintain state.
-* The `LatestMovieReviewsContainer` should have a top-level wrapping element with class `latest-movie-reviews`.
-* the `SearchableMovieReviewsContainer` should have a top-level wrapping element with class `searchable-movie-reviews`.
-
-## The _New York Times_ API
-In order to fetch data from the _New York Times_ API, you'll need to make calls to the following URLs:
-
-* For the latest movie reviews: `https://api.nytimes.com/svc/movies/v2/reviews/all.json`
-* To query the search API: `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=<search-term>`
+In order to fetch data from the _New York Times_ API, you'll need to make calls to the following URL: `http://api.nytimes.com/svc/news/v3/content/all/all.json`
 
 In addition to making calls to these URLs, you will need to request an API key from [here](https://developer.nytimes.com/signup). Once you have the key, you will "sign" your requests by attaching the key to the URL like so:
 ```
-https://api.nytimes.com/svc/movies/v2/reviews/all.json?api-key=<your key here>
+http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=<your key here>
 ```
 
-For fetching from the API, make sure to use [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch), which provides a particularly nice API.
+For further information about the _New York Times_ Newswire API — including a sandbox where you can view the data that the API returns — please consult [their documentation](https://developer.nytimes.com/timeswire_v3.json#/Documentation/GET/content.json).
 
-For further information about the _New York Times_ Movie Reviews API — including a sandbox where you can view the data that the API returns — please consult [their documentation](http://developer.nytimes.com/movie_reviews_v2.json#/Documentation/GET/reviews/search.json).
+* #### Isomorphic-Fetch API
+For fetching from the API, make sure to use [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch),
 
-## Resources
+## Installing
 
-- [Container Components](https://medium.com/@learnreact/container-components-c0e67432e005#.2kd1wuyp4)
-- [CSS Tricks: Container Components](https://css-tricks.com/learning-react-container-components/)
-- [_New York Times_ Movie Reviews API Documentation](http://developer.nytimes.com/movie_reviews_v2.json#/Documentation)
+After cloning this repo, navigate into the directory in terminal and run the following:
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/react-container-components-lab'>Container Components Lab</a> on Learn.co and start learning to code for free.</p>
-# newswire-app
+1.  `npm install`
+2.  [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch): `npm install --save isomorphic-fetch es6-promise`
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2018 Siobhan Mahoney
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

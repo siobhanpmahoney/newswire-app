@@ -74,8 +74,8 @@ body {
 .footer {
   background-color:#B7C5D3;
   color: white;
-  font-family: "Avenir";
-  font-weight: 800;
+  font-family: "Avenir Next";
+  font-weight: 700;
   height: 80px;
   width: 1200px;
   margin: 0.1em;
@@ -116,21 +116,38 @@ body {
   height: 200px;
   margin: 0.5rem;
   position: align;
-  width: 700px;
+  width: 800px;
   box-shadow: 0 14px 14px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   padding: 1em;
   background: white;
 }
 
 .wireItemSection, .wireItemDate {
-  font-size: 11px;
-  font-family: "PT Serif"
+  font-size: 14px;
+  font-family: "PT Serif";
 }
 
+.wireItemSection {
+  font-weight: 600;
+
+}
+
+
 .readLaterInfo {
-  font-size: 11px;
-  font-family: "Overpass";
+  font-size: 12px;
+  font-family: "Avenir";
   padding: 0.25em 0.25em 0.5em 0.25em;
+}
+
+.viewHistoryHeader, .readLaterHeader {
+  font-family: "Avenir";
+  font-size: 16px;
+  font-weight: 580;
+
+}
+
+.readLaterSection, .readNowSection {
+  padding: 1em 0.5em;
 }
 
 .readLaterArticleItem {
@@ -147,20 +164,22 @@ body {
 
   width: 255px;
   padding: 0.75em 0.25em;
-  margin: 0.75em 0;
+  margin: 1em 0;
 }
 
 .readLaterArticleTitle {
-  font-size: 13.5px;
+  font-size: 14px;
   font-family: "Avenir";
-  font-weight: 500;
+  font-weight: 550;
+  padding: 0.1em 0.2em;
+  /* line-height: 1.25em; */
   margin: 0px 0px 6px 0px;
 }
 
 .newswireItemArticleTitle {
   float: clear;
   font-family: "Avenir";
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .wireImg {
@@ -175,7 +194,7 @@ body {
   padding: 6px 6px 0px 6px;
   margin: 6px 3px;
   font-family: "PT Serif";
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .newsWireButtons {
@@ -193,14 +212,16 @@ h1, h2, h3, h4 {
 .readNow {
   background-color: #f6f8fe;
   color: #333F4A;
-  padding: 0.5em;
+  margin: 0.5em 0;
+  padding: 0.25em;
   border-radius: 5px;
 }
 
 .readNowArticleTitle {
 
   color: #333F4A;
-  font-size: 13px;
+  font-size: 13.5px;
+  line-height: 1.25em;
   border-radius: 5px;
   display: flex;
   align-items: left;
@@ -210,19 +231,19 @@ h1, h2, h3, h4 {
   min-height: 25px;
   alignment: center;
   font-family:"Avenir";
-  font-weight: 500;
+  font-weight: 525;
   width: 225px;
-  padding: 0.5em;
-  margin: 0 1em 1em 0;
+  padding: 0.1em 0.2em;
+  margin: 0.5em 1em 1em 0;
 }
 
 
 button.readNow {
   border: none;
 background-color: #68A1F0;
-font-family: "Overpass";
+font-family: "Avenir";
 color: white;
-font-size: 12px;
+font-size: 13px;
 margin: 6px 6px;
 padding: 6px 6px;
 border-radius: 6px;
@@ -231,9 +252,9 @@ border-radius: 6px;
 button.readLater {
   border: none;
 background-color: #6dced5;
-font-family: "Overpass";
+font-family: "Avenir";
 color: white;
-font-size: 12px;
+font-size: 13px;
 margin: 6px 6px;
 padding: 6px 6px;
 border-radius: 6px;
@@ -242,10 +263,19 @@ border-radius: 6px;
 button.delete {
   border: none;
 background-color: #E27E8D;
-font-family: "Overpass";
+font-family: "Avenir";
 color: white;
-font-size: 12px;
+font-size: 13px;
 margin: 6px 6px;
 padding: 6px 6px;
 border-radius: 6px;
+}
+
+ol {
+    padding: 0 1.2em;
+
+}
+
+li {
+  font-family: "Avenir";
 }

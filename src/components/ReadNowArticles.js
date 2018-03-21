@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReadNowArticles = ({ readNowArticle }) => (
     <div>
-      <span className="readNowArticleTitle">{readNowArticle.title}</span>
+      <span className="readNowArticleTitle"><li>{readNowArticle.title}</li></span>
     </div>
   );
 
