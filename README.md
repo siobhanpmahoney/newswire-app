@@ -36,8 +36,15 @@ For fetching from the API, make sure to use [isomorphic-fetch](https://github.co
 
 After cloning this repo, navigate into the directory in terminal and run the following:
 
-1.  `npm install`
-2.  [isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch): `npm install --save isomorphic-fetch es6-promise`
+```
+npm install
+```
+
+[isomorphic-fetch](https://github.com/matthew-andrews/isomorphic-fetch):
+
+```
+npm install --save isomorphic-fetch es6-promise
+```
 
 ## License
 
