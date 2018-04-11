@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-
+import { nytimes_key } from './ApiKeys'
 import 'isomorphic-fetch';
 import './App.css';
 import ArticleContainer from './components/ArticleContainer';
 import ReadLaterContainer from './components/ReadLaterContainer';
 import ReadNowContainer from './components/ReadNowContainer'
+import { Grid } from 'semantic-ui-react'
 
-const URL = 'http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=e7d46b3683014c88ade24365a40b3b93';
+const URL = `http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
 
 class App extends Component {
     constructor(props) {
@@ -95,36 +96,40 @@ class App extends Component {
 
     render() {
       console.log(this.state.readNow.length)
-        return (
-            <div className="news-wire-top wrapper">
-            <div className="box header">NYTimes NewsWire</div>
-                <div className="news-wire content">
-                    <h2 className="news-wire-title">Latest Articles from the New York Times</h2>
-                    <ArticleContainer
-                        articles={this.state.articles}
-                        handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
+      console.log(nytimes_key)
+      return (
+        <div className="news-wire-top wrapper">
+          <div className="box header">NYTimes NewsWire</div>
+
+
+        <div class="sidebar-and-feed">
+
+          <div className="news-wire content">
+            <h2 className="news-wire-title">Latest Articles from the New York Times</h2>
+            <ArticleContainer
+              articles={this.state.articles}
+              handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
                 </div>
 
-                  <div className="read-later box sidebar">
-                    <div className="readLaterSection">
-                      <span className="readLaterHeader">Saved Articles</span>
+            <div className="read-later box sidebar">
+              <div className="readLaterSection">
+                <span className="readLaterHeader">Saved Articles</span>
 
-                      <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
-                    </div>
+                <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
+              </div>
 
-<div className="readNowSection">
-    <span className="viewHistoryHeader">Viewing History</span>
-    {this.state.readNow.length >= 1 &&
-          <ReadNowContainer readNow={this.state.readNow} />
-}
-      </div>
-</div>
-
-
-
+              <div className="readNowSection">
+                <span className="viewHistoryHeader">Viewing History</span>
+                {this.state.readNow.length >= 1 &&
+                  <ReadNowContainer readNow={this.state.readNow} />
+                }
+              </div>
             </div>
-        );
-    }
-}
 
-export default App;
+        </div>
+        </div>
+      );
+    }
+  }
+
+  export default App;
