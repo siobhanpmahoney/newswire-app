@@ -99,7 +99,7 @@ class App extends Component {
       console.log(nytimes_key)
       return (
         <div className="news-wire-top wrapper">
-          <div className="box header">NYTimes NewsWire</div>
+          <div className="box header"><span className="header-text">NYTimes NewsWire</span></div>
 
 
         <div class="sidebar-and-feed">
