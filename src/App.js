@@ -5,7 +5,7 @@ import './App.css';
 import ArticleContainer from './components/ArticleContainer';
 import ReadLaterContainer from './components/ReadLaterContainer';
 import ReadNowContainer from './components/ReadNowContainer'
-import { Grid } from 'semantic-ui-react'
+
 
 const URL = `http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
 
