@@ -7,7 +7,7 @@ import ReadLaterContainer from './components/ReadLaterContainer';
 import ReadNowContainer from './components/ReadNowContainer'
 
 
-const URL = `http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
+const URL = `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
 
 class App extends Component {
     constructor(props) {
