@@ -67,7 +67,7 @@ fetchRecommendedArticles = () => {
 
 
 startInterval = () => {
-  this.interval = setInterval(this.fetchRecommendedArticles, 5000)
+  this.interval = setInterval(this.fetchRecommendedArticles, 20000)
 }
 
 
