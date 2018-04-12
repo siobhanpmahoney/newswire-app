@@ -23,7 +23,7 @@
   background-color: #222;
   height: 200px;
   padding: 20px;
-  color: white;
+
 }
 
 .App-intro {
@@ -37,7 +37,11 @@
 
 .header,
 .footer {
-  background-image: linear-gradient(to top, #50c9c3 0%, #96deda  100%);
+  /* background-image: linear-gradient(to top, #50c9c3 0%, #96deda  100%); */
+
+  background: #f6f7fb;
+  background-image: linear-gradient(60deg, #25344b 0%, #485563 100%);
+
   /* background-image: linear-gradient(60deg, #25344b 0%, #485563 100%); */
   /* background: #f6f7fb; */
   color: white;
@@ -57,9 +61,11 @@
 
 body {
   margin: 0.5em;
-  background: #f6f7fb;
-  background-image: linear-gradient(60deg, #25344b 0%, #485563 100%);
+  /* background: #f6f7fb;
+  background-image: linear-gradient(60deg, #25344b 0%, #485563 100%); */
   font-family: "Roboto";
+  background: #E8EEF4;
+  /* background-color: #cfdae6; */
   /* background: #25344b; */
 
 }
@@ -71,7 +77,9 @@ body {
 .sidebar {
   /* grid-area: sidebar; */
   /* background-color: #f9fafc; */
-  background-color: #E4F6F6;
+  /* background-color: #f6f8fe; */
+  background-color: #cfdae6;
+  /* background-color: #E4F6F6; */
   /* background: #f6f7fb; */
   /* background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%); */
   margin: 3.5em 0.5em 1em 1em;
@@ -99,8 +107,12 @@ body {
   justify-content: flex-end;
   min-width: 220px;
   max-width: 220px;
+  background-color: #7590AC;
+  color: white;
   /* background-color: #E4F6F6; */
-  background-color: #cfdae6;
+
+
+  /* background-color: #cfdae6; */
 
   margin: 3.5em 0.5em 1em 1em;
   padding: 0.5em;
@@ -161,6 +173,8 @@ body {
   /* background-color: #E4F6F6; */
   background-color: #f9fafc;
   /* background-color: #E4F6F6; */
+
+    /* background-color: #E4F6F6; */
   color: #333F4A;
   border-radius: 5px;
   align-items: right;
@@ -260,7 +274,7 @@ body {
 }
 
 .news-wire-title {
-  color: white;
+
 }
 
 
@@ -300,7 +314,7 @@ body {
 
 
 .readLaterArticleTitle {
-  font-size: 13px;
+  font-size: 12px;
   font-family: "Roboto";
   font-weight: 440;
   padding: 0.1em 0.2em;
@@ -354,7 +368,7 @@ h1, h2, h3, h4 {
 .readNowArticleTitle {
 
   color: #333F4A;
-  font-size: 13.5px;
+  font-size: 12px;
   line-height: 1.25em;
   border-radius: 5px;
   /* display: flex; */
@@ -374,10 +388,10 @@ h1, h2, h3, h4 {
 
 button.readNow {
   border: none;
-background-color: #50c9c3;
+background-color: #64DEDA;
 font-family: "Roboto";
 color: white;
-font-size: 12px;
+font-size: 11px;
 margin: 3px 12px;
 padding: 6px 6px;
 border-radius: 6px;
@@ -387,7 +401,7 @@ justify-content: right;
 }
 
 button.readNow.saved {
-  font-size: 12px;
+  font-size: 11px;
 }
 
 button.readLater {
@@ -395,7 +409,7 @@ button.readLater {
 background-color: #35a8f2e3;
 font-family: "Roboto";
 color: white;
-font-size: 12px;
+font-size: 11px;
 margin: 6px 6px;
 padding: 6px 6px;
 border-radius: 6px;
@@ -404,10 +418,10 @@ border-radius: 6px;
 
 button.delete {
   border: none;
-background-color: #f73e60;
+background-color: #FF5370;
 font-family: "Roboto";
 color: white;
-font-size: 12px;
+font-size: 11px;
 margin: 6px 6px;
 padding: 6px 6px;
 border-radius: 6px;
