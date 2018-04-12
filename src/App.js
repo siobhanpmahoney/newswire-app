@@ -5,6 +5,7 @@ import './App.css';
 import ArticleContainer from './components/ArticleContainer';
 import ReadLaterContainer from './components/ReadLaterContainer';
 import ReadNowContainer from './components/ReadNowContainer'
+import RecommendationContainer from './components/recommendations/RecommendationContainer'
 
 
 const URL = `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
@@ -17,6 +18,7 @@ class App extends Component {
             articles: [],
             readNow: [],
             readLater: [],
+            likedSections: []
         };
     }
 
@@ -52,10 +54,16 @@ class App extends Component {
 
     handleSaveArticleToReadLater = (art) => {
       let currentReadLaterState = this.state.readLater.slice(0)
+      let currentLikedSections = this.state.likedSections.slice(0)
         if (!this.state.readLater.includes(art)) {
           this.setState({
               readLater: [...currentReadLaterState, art],
           });
+        }
+        {!this.state.likedSections.includes(art.section) &&
+          this.setState({
+            likedSections: [...currentLikedSections, art.section]
+          })
         }
     }
 
@@ -94,8 +102,11 @@ class App extends Component {
       })
     }
 
+    
+
     render() {
       console.log(this.state.readNow.length)
+      console.log("likedSections", this.state.likedSections)
       console.log(nytimes_key)
       return (
         <div className="news-wire-top wrapper">
@@ -124,6 +135,11 @@ class App extends Component {
                   <ReadNowContainer readNow={this.state.readNow} />
                 }
               </div>
+            </div>
+
+
+            <div className="recommendedContainer">
+              <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections}/>
             </div>
 
         </div>
