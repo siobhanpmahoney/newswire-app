@@ -102,7 +102,7 @@ class App extends Component {
       })
     }
 
-    
+
 
     render() {
       console.log(this.state.readNow.length)
@@ -115,6 +115,21 @@ class App extends Component {
 
         <div class="sidebar-and-feed">
 
+          <div className="read-later box sidebar">
+            <div className="readLaterSection">
+              <span className="readLaterHeader">Saved Articles</span>
+
+              <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
+            </div>
+
+            <div className="readNowSection">
+              <span className="viewHistoryHeader">Viewing History</span>
+              {this.state.readNow.length >= 1 &&
+                <ReadNowContainer readNow={this.state.readNow} />
+              }
+            </div>
+          </div>
+
           <div className="news-wire content">
             <h2 className="news-wire-title">Latest Articles from the New York Times</h2>
             <ArticleContainer
@@ -122,24 +137,11 @@ class App extends Component {
               handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
                 </div>
 
-            <div className="read-later box sidebar">
-              <div className="readLaterSection">
-                <span className="readLaterHeader">Saved Articles</span>
 
-                <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
-              </div>
-
-              <div className="readNowSection">
-                <span className="viewHistoryHeader">Viewing History</span>
-                {this.state.readNow.length >= 1 &&
-                  <ReadNowContainer readNow={this.state.readNow} />
-                }
-              </div>
-            </div>
 
 
             <div className="recommendedContainer">
-              <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections}/>
+              <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle}/>
             </div>
 
         </div>

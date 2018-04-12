@@ -35,10 +35,10 @@ class ArticleItem extends React.Component {
 
           <div className="newsWireButtons">
             <span className="button read-now">
-              <button onClick={this.handleReadNow} className="readNow">Read Now</button>
+              <button onClick={this.handleReadNow} className="readNow">Read</button>
             </span>
             <span className="button read-later">
-              <button onClick={this.handleReadLater} className="readLater">Read Later</button>
+              <button onClick={this.handleReadLater} className="readLater">Save</button>
             </span>
 
           </div>

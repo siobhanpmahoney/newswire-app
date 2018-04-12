@@ -1,6 +1,7 @@
 import React from 'react'
 import { nytimes_key } from '../../ApiKeys'
 import 'isomorphic-fetch';
+import RecommendedArticleItem from './RecommendedArticleItem'
 
 
 
@@ -43,7 +44,7 @@ fetchRecommendedArticles = () => {
     let url = `https://api.nytimes.com/svc/mostpopular/v2/mostviewed/${i}/7.json?api-key=${nytimes_key}`
     fetch(url)
       .then(response=> response.json())
-      .then(json => json.results.map((newArt) => {
+      .then(json => json.results.slice(0, 10).map((newArt) => {
       if (!this.state.recommendedArticles.find((a) => a.title === newArt.title) && !this.props.articles.find((feed) => feed.title === newArt.title)) {
         this.setState((state, props) => {
           return {
@@ -84,6 +85,10 @@ startInterval = () => {
 
     return (
       <div>
+      <span className="readLaterHeader"> Recommended Reading</span>
+        {this.state.recommendedArticles.map((a) => {
+          return <RecommendedArticleItem recommendedArticle = {a} handleSaveArticleToReadLater={this.props.handleSaveArticleToReadLater} handleReadArticle={this.props.handleReadArticle} />
+        })}
       </div>
     )
   }

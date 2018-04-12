@@ -42,12 +42,12 @@
   /* background: #f6f7fb; */
   color: white;
   /* color: #50c9c3; */
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   font-weight: 600;
   height: 110px;
   width: 100%;
   padding: 0.65em 0.5em 0 0.5em;
-  font-size:3.5em;
+  font-size:3em;
 }
 
 .header-text {
@@ -59,6 +59,7 @@ body {
   margin: 0.5em;
   background: #f6f7fb;
   background-image: linear-gradient(60deg, #25344b 0%, #485563 100%);
+  font-family: "Roboto";
   /* background: #25344b; */
 
 }
@@ -73,17 +74,18 @@ body {
   background-color: #E4F6F6;
   /* background: #f6f7fb; */
   /* background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%); */
-  margin: 3.5em 2em 1em 1em;
+  margin: 3.5em 0.5em 1em 1em;
   padding: 0.5em;
   border-radius: 4px;
   /* display: inline-block; */
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 220px;
+  max-width: 220px;
   float: right;
   position: sticky;
   vertical-align: top;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-content: center;
+  flex-grow: 2;
   /* display:flex; */
   /* flex-direction:column; */
   /* background-color: #E4F6F6; */
@@ -91,9 +93,27 @@ body {
   /* background-image: linear-gradient(225deg, #e6e9f0 0%, #f6f7fb 100%); */
 }
 
+.recommendedContainer {
+  overflow: auto;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 220px;
+  max-width: 220px;
+  /* background-color: #E4F6F6; */
+  background-color: #cfdae6;
+
+  margin: 3.5em 0.5em 1em 1em;
+  padding: 0.5em;
+  border-radius: 4px;
+  position: sticky;
+  vertical-align: top;
+  align-content: center;
+  flex-grow: 2;
+}
+
 .news-wire, {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 1em;
 }
 
@@ -101,8 +121,8 @@ body {
 
   alignment: flex-start;
   position: relative;
-  font-family: "Noto Sans";
-  font-size: 25px;
+  font-family: "Roboto";
+  font-size: 20px;
   font-weight: 400;
   margin: 0.75em;
 }
@@ -121,8 +141,10 @@ body {
   justify-content: left;
   flex-direction: row;
   min-height: 200px;
-  max-height: 250px;
-  width: 825px;
+  max-height: 380px;
+  /* width: 600px; */
+  flex-grow: 6;
+  flex-direction: column;
   margin: 1em;
   /* position: static; */
   /* float: right; */
@@ -131,7 +153,8 @@ body {
   padding: 0.5em;
   /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
   background-color: #f6f7fb;
-  color: #25344b.
+  color: #25344b;
+  width: 95%;
 }
 
 .readLaterArticleItem {
@@ -148,12 +171,30 @@ body {
   alignment: center;
   /* float: right; */
   vertical-align: top;
-  width: 275px;
+  width: 200px;
   padding: 0.75em 0.25em;
   margin: 1em 0;
   font-size: 12px;
   color: #5C7187;
 
+}
+
+.recommendedArticleItem {
+  background-color: #f9fafc;
+
+  color: #333F4A;
+  border-radius: 5px;
+  align-items: left;
+  justify-content: left;
+  max-height: 150px;
+  min-height: 80px;
+  alignment: center;
+  vertical-align: top;
+  width: 210px;
+  padding: 0.75em 0.25em;
+  margin: 1.2em 0;
+  font-size: 12px;
+  color: #5C7187;
 }
 
 /* .content {
@@ -226,7 +267,7 @@ body {
 
 .wireItemSection, .wireItemDate {
   font-size: 14px;
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   color: #25344b;
 }
 
@@ -238,14 +279,15 @@ body {
 
 .readLaterInfo {
   font-size: 11px;
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   color: #5C7187;
-  font-weight: 575;
+  font-weight: 400;
   padding: 0.25em 0.25em 0.5em 0.25em;
+
 }
 
 .viewHistoryHeader, .readLaterHeader {
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   font-size: 16px;
   font-weight: 580;
 
@@ -258,9 +300,9 @@ body {
 
 
 .readLaterArticleTitle {
-  font-size: 14px;
-  font-family: "Noto Sans";
-  font-weight: 540;
+  font-size: 13px;
+  font-family: "Roboto";
+  font-weight: 440;
   padding: 0.1em 0.2em;
   /* line-height: 1.25em; */
   margin: 0px 0px 6px 0px;
@@ -268,7 +310,7 @@ body {
 
 .newswireItemArticleTitle {
   float: clear;
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   font-weight: 550;
 }
 
@@ -283,8 +325,8 @@ body {
   color: #25344b;
   padding: 3px 3px 0px 3px;
   margin: 6px 3px;
-  font-family: "Noto Sans";
-  font-size: 17px;
+  font-family: "Roboto";
+  font-size: 14px;
 }
 
 .newsWireButtons {
@@ -295,7 +337,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Noto Sans";
+  font-family: "Roboto";
   font-weight: 600;
 
 }
@@ -323,17 +365,17 @@ h1, h2, h3, h4 {
   min-height: 25px;
   alignment: center;
   font-family:"franklingothic-book";
-  font-weight: 525;
+  font-weight: 440;
   width: 225px;
-  padding: 0.1em 0.2em;
-  margin: 0.5em 1em 1em 0;
+  /* padding: 0.1em 0.2em; */
+  margin: 0.5em 0.5em 1em 0;
 }
 
 
 button.readNow {
   border: none;
 background-color: #50c9c3;
-font-family: "Noto Sans";
+font-family: "Roboto";
 color: white;
 font-size: 12px;
 margin: 3px 12px;
@@ -351,7 +393,7 @@ button.readNow.saved {
 button.readLater {
   border: none;
 background-color: #35a8f2e3;
-font-family: "Noto Sans";
+font-family: "Roboto";
 color: white;
 font-size: 12px;
 margin: 6px 6px;
@@ -363,7 +405,7 @@ border-radius: 6px;
 button.delete {
   border: none;
 background-color: #f73e60;
-font-family: "Noto Sans";
+font-family: "Roboto";
 color: white;
 font-size: 12px;
 margin: 6px 6px;
@@ -377,5 +419,5 @@ ol {
 }
 
 li {
-  font-family: "Noto Sans";
+  font-family: "Roboto";
 }
