@@ -48,7 +48,7 @@ fetchRecommendedArticles = () => {
       if (!this.state.recommendedArticles.find((a) => a.title === newArt.title) && !this.props.articles.find((feed) => feed.title === newArt.title)) {
         this.setState((state, props) => {
           return {
-          recommendedArticles: [...state.recommendedArticles, newArt]
+          recommendedArticles: [newArt,...state.recommendedArticles]
         }
           // recommendedArticles: Object.assign({},
           //   currentState, {
@@ -67,7 +67,7 @@ fetchRecommendedArticles = () => {
 
 
 startInterval = () => {
-  this.interval = setInterval(this.fetchRecommendedArticles, 20000)
+  this.interval = setInterval(this.fetchRecommendedArticles, 1000)
 }
 
 

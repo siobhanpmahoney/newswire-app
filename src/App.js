@@ -49,7 +49,7 @@ class App extends Component {
     }
 
     startInterval = () => {
-      this.interval = setInterval(this.fetchArticles, 15000)
+      this.interval = setInterval(this.fetchArticles, 1000)
     }
 
     handleSaveArticleToReadLater = (art) => {
