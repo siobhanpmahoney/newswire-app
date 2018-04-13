@@ -88,6 +88,11 @@ class App extends Component {
         console.log(this.state.readNow.length)
         alert("Looks like you've hit your limit of 15 free articles this month. Subscribe now for unlimited access to our content.")
       }
+      {!this.state.likedSections.includes(art.section) &&
+        this.setState({
+          likedSections: [...currentLikedSections, art.section]
+        })
+      }
     }
 
     handleOpenArticle = (article) => {
