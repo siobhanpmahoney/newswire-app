@@ -36,7 +36,7 @@ class App extends Component {
         if (!this.state.articles.find((a) => a.title === newArt.title)) {
           this.setState((state, props) => {
             return {
-              articles: [...state.articles, newArt]
+              articles: [newArt,... state.articles]
             }
           })
         }
