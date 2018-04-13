@@ -70,6 +70,7 @@ class App extends Component {
 
 
     handleReadArticle = (art) => {
+      let currentReadLaterState = this.state.readLater.slice(0)
       {!this.state.likedSections.includes(art.section) &&
         this.setState({
           likedSections: [...currentLikedSections, art.section]
