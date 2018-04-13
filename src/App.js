@@ -70,6 +70,11 @@ class App extends Component {
 
 
     handleReadArticle = (art) => {
+      {!this.state.likedSections.includes(art.section) &&
+        this.setState({
+          likedSections: [...currentLikedSections, art.section]
+        })
+      }
       if (this.state.readNow.length < 15) {
 
         let readNow = [...this.state.readNow, art];
@@ -88,11 +93,7 @@ class App extends Component {
         console.log(this.state.readNow.length)
         alert("Looks like you've hit your limit of 15 free articles this month. Subscribe now for unlimited access to our content.")
       }
-      {!this.state.likedSections.includes(art.section) &&
-        this.setState({
-          likedSections: [...currentLikedSections, art.section]
-        })
-      }
+
     }
 
     handleOpenArticle = (article) => {
