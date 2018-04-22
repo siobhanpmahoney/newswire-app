@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nytimes_key } from './ApiKeys'
 import 'isomorphic-fetch';
-import 'local-storage'
+import ls from 'local-storage'
 import './App.css';
 import ArticleContainer from './components/ArticleContainer';
 import ReadLaterContainer from './components/ReadLaterContainer';
@@ -11,7 +11,7 @@ import RecommendationContainer from './components/recommendations/Recommendation
 
 const URL = `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
 
-var ls = require('local-storage')
+// var ls = require('local-storage')
 
 class App extends Component {
     constructor(props) {
