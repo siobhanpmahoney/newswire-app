@@ -23,6 +23,7 @@
     "es6-promise": "^4.2.4",
     "expect": "^21.2.1",
     "isomorphic-fetch": "^2.2.1",
+    "local-storage": "^1.4.2",
     "react": "^16.0.0 ",
     "react-dom": "^16.0.0 ",
     "sinon": "^1.17.7"

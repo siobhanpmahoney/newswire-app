@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { nytimes_key } from './ApiKeys'
 import 'isomorphic-fetch';
+import 'local-storage'
 import './App.css';
 import ArticleContainer from './components/ArticleContainer';
 import ReadLaterContainer from './components/ReadLaterContainer';
@@ -9,6 +10,8 @@ import RecommendationContainer from './components/recommendations/Recommendation
 
 
 const URL = `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
+
+var ls = require('local-storage')
 
 class App extends Component {
     constructor(props) {
@@ -25,7 +28,12 @@ class App extends Component {
     componentDidMount() {
         fetch(URL)
           .then(response => response.json())
-          .then(json => this.setState({ articles: json.results }));
+          .then(json => this.setState({
+            articles: json.results,
+            readNow: ls.get('readNow') || [],
+            readLater: ls.get('readLater') || [],
+            likedSections: ls.get('likedSections') || []
+          }));
         this.startInterval()
     }
 
@@ -55,35 +63,40 @@ class App extends Component {
     handleSaveArticleToReadLater = (art) => {
       let currentReadLaterState = this.state.readLater.slice(0)
       let currentLikedSections = this.state.likedSections.slice(0)
+      let newReadLaterState = [...currentReadLaterState, art]
         if (!this.state.readLater.includes(art)) {
           this.setState({
-              readLater: [...currentReadLaterState, art],
+              readLater: newReadLaterState,
           });
+          ls.set('readLater', newReadLaterState)
         }
-        {!this.state.likedSections.includes(art.section) &&
+        if (!this.state.likedSections.includes(art.section)) {
+          const newLikedSections = [...currentLikedSections, art.section];
           this.setState({
-            likedSections: [...currentLikedSections, art.section]
+            likedSections: newLikedSections
           })
+          ls.set('likedSections', newLikedSections);
         }
+
     }
 
 
 
     handleReadArticle = (art) => {
       let currentLikedSections = this.state.likedSections.slice(0)
-      {!this.state.likedSections.includes(art.section) &&
+      let newLikedSections = [...currentLikedSections, art.section]
+      if (!this.state.likedSections.includes(art.section)) {
         this.setState({
-          likedSections: [...currentLikedSections, art.section]
+          likedSections: newLikedSections
         })
+        ls.set('likedSections', newLikedSections)
       }
       if (this.state.readNow.length < 15) {
-
         let readNow = [...this.state.readNow, art];
         this.setState({
           readNow: readNow,
         });
-
-
+        ls.set('readNow', readNow)
         if (this.state.readLater.find((article) => article.title === art.title)) {
           this.handleDeleteArticle(art)
         }
@@ -107,6 +120,7 @@ class App extends Component {
       this.setState({
         readLater: truncatedList
       })
+      ls.set('readLater', truncatedList)
     }
 
 
