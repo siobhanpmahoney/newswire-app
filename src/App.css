@@ -46,7 +46,7 @@
   /* background: #f6f7fb; */
   color: white;
   /* color: #50c9c3; */
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-weight: 600;
   height: 110px;
   width: 100%;
@@ -63,7 +63,7 @@ body {
   margin: 0.5em;
   /* background: #f6f7fb;
   background-image: linear-gradient(60deg, #25344b 0%, #485563 100%); */
-  font-family: "Roboto";
+  font-family: "Open Sans";
   background: #ECF2F9;
   /* background-color: #cfdae6; */
   /* background: #25344b; */
@@ -72,12 +72,12 @@ body {
 
 .sidebar-and-feed {
   display: flex;
+
 }
 
 .sidebar {
-  /* grid-area: sidebar; */
-  /* background-color: #f9fafc; */
-  /* background-color: #f6f8fe; */
+  display: flex;
+  flex-direction: column;
   background-color: #cfdae6;
   /* background-color: #E4F6F6; */
   /* background: #f6f7fb; */
@@ -133,7 +133,7 @@ body {
 
   alignment: flex-start;
   position: relative;
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-size: 20px;
   font-weight: 400;
   margin: 0.75em;
@@ -281,7 +281,7 @@ body {
 
 .wireItemSection, .wireItemDate {
   font-size: 14px;
-  font-family: "Roboto";
+  font-family: "Open Sans";
   color: #25344b;
 }
 
@@ -293,7 +293,7 @@ body {
 
 .readLaterInfo {
   font-size: 11px;
-  font-family: "Roboto";
+  font-family: "Open Sans";
   color: #5C7187;
   font-weight: 400;
   padding: 0.25em 0.25em 0.5em 0.25em;
@@ -301,7 +301,7 @@ body {
 }
 
 .viewHistoryHeader, .readLaterHeader {
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-size: 16px;
   font-weight: 580;
 
@@ -315,7 +315,7 @@ body {
 
 .readLaterArticleTitle {
   font-size: 12px;
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-weight: 440;
   padding: 0.1em 0.2em;
   /* line-height: 1.25em; */
@@ -324,7 +324,7 @@ body {
 
 .newswireItemArticleTitle {
   float: clear;
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-weight: 550;
 }
 
@@ -339,7 +339,7 @@ body {
   color: #25344b;
   padding: 3px 3px 0px 3px;
   margin: 6px 3px;
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-size: 14px;
 }
 
@@ -351,7 +351,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: "Roboto";
+  font-family: "Open Sans";
   font-weight: 600;
 
 }
@@ -389,7 +389,7 @@ h1, h2, h3, h4 {
 button.readNow {
   border: none;
 background-color: #64DEDA;
-font-family: "Roboto";
+font-family: "Open Sans";
 color: white;
 font-size: 11px;
 margin: 3px 12px;
@@ -407,7 +407,7 @@ button.readNow.saved {
 button.readLater {
   border: none;
 background-color: #35a8f2e3;
-font-family: "Roboto";
+font-family: "Open Sans";
 color: white;
 font-size: 11px;
 margin: 6px 6px;
@@ -419,7 +419,7 @@ border-radius: 6px;
 button.delete {
   border: none;
 background-color: #FF5370;
-font-family: "Roboto";
+font-family: "Open Sans";
 color: white;
 font-size: 11px;
 margin: 6px 6px;
@@ -433,5 +433,5 @@ ol {
 }
 
 li {
-  font-family: "Roboto";
+  font-family: "Open Sans";
 }
