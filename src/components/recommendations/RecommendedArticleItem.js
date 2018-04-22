@@ -24,16 +24,20 @@ class RecommendedArticle extends React.Component {
 
     return (
       <div className="recommendedArticleItem">
+        <div className="readNowButtons">
+        <span className="button read-now">
+          <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i>
+          </button>
+        </span>
+        <span className="button read-later">
+          <button onClick={this.handleReadLater} className="readLater">
+            <i className="material-icons">collections_bookmark</i>
+        </button>
+        </span>
+      </div><br />
       <span className="readLaterInfo">{this.props.recommendedArticle.section} | {this.formattedDate(this.props.recommendedArticle.published_date)} </span> <br />
       <span className="readLaterArticleTitle">{this.props.recommendedArticle.title}</span>
-      <div className="readNowButtons">
-      <span className="button read-now">
-        <button onClick={this.handleReadNow} className="readNow">Read</button>
-      </span>
-      <span className="button read-later">
-        <button onClick={this.handleReadLater} className="readLater">Save</button>
-      </span>
-      </div>
+
         </div>);
 };}
 

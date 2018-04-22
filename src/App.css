@@ -65,6 +65,7 @@ body {
   background-image: linear-gradient(60deg, #25344b 0%, #485563 100%); */
   font-family: "Open Sans";
   background: #ECF2F9;
+  display: flex;
   /* background-color: #cfdae6; */
   /* background: #25344b; */
 
@@ -79,58 +80,45 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #cfdae6;
-  /* background-color: #E4F6F6; */
-  /* background: #f6f7fb; */
-  /* background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%); */
-  margin: 3.5em 0.5em 1em 1em;
+  /* flex-wrap: nowrap; */
+  width: 30%;
+  margin: 3.5em 0.5em 1em 0.5em;
   padding: 0.5em;
   border-radius: 4px;
-  /* display: inline-block; */
-  min-width: 220px;
-  max-width: 220px;
-  float: right;
-  position: sticky;
-  vertical-align: top;
+
   justify-content: flex-start;
-  align-content: center;
-  flex-grow: 2;
-  /* display:flex; */
-  /* flex-direction:column; */
-  /* background-color: #E4F6F6; */
-  /* background: #f9fafc; */
-  /* background-image: linear-gradient(225deg, #e6e9f0 0%, #f6f7fb 100%); */
+  align-items: flex-start;
+
+
+
 }
 
 .recommendedContainer {
   overflow: auto;
-  display: flex;
-  justify-content: flex-end;
-  min-width: 220px;
-  max-width: 220px;
   background-color: #7590AC;
   color: white;
-  /* background-color: #E4F6F6; */
-
-
-  /* background-color: #cfdae6; */
-
   margin: 3.5em 0.5em 1em 1em;
   padding: 0.5em;
   border-radius: 4px;
-  position: sticky;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 30%;
   vertical-align: top;
-  align-content: center;
-  flex-grow: 2;
+  align-content: flex-start;
 }
 
 .news-wire, {
-  display: flex;
+  display: inline-flex;
+  width: 40%;
   justify-content: center;
+  align-items: flex-start;
+
   margin: 1em;
 }
 
 .news-wire-title {
-
   alignment: flex-start;
   position: relative;
   font-family: "Open Sans";
@@ -146,69 +134,57 @@ body {
 
 .articleItemNewswire {
   border-radius: 3px;
-  display: inline-block;
-  align-items: left;
-  alignment: left;
-  float: left;
-  justify-content: left;
-  flex-direction: row;
   min-height: 200px;
   max-height: 380px;
-  /* width: 600px; */
-  flex-grow: 6;
-  flex-direction: column;
-  margin: 1em;
-  /* position: static; */
-  /* float: right; */
-  /* width: 800px; */
   box-shadow: 0 4px 4px rgba(0,0,0,0.15), 0 4px 4px rgba(0,0,0,0.2);
   padding: 0.5em;
-  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
-  background-color: #f6f7fb;
   color: #25344b;
+  background-color: #f6f7fb;
+  margin: 1em;
+
+  display: flex;
+
+  alignment: left;
+  justify-content: center;
+  flex-direction: row;
+  flex-direction: column;
+
   width: 95%;
 }
 
 .readLaterArticleItem {
-  /* background-color: #E4F6F6; */
   background-color: #f9fafc;
-  /* background-color: #E4F6F6; */
-
-    /* background-color: #E4F6F6; */
   color: #333F4A;
   border-radius: 5px;
-  align-items: right;
-  justify-content: right;
-  /* flex-direction: column; */
-  max-height: 150px;
-  min-height: 80px;
-  alignment: center;
-  /* float: right; */
-  vertical-align: top;
-  width: 200px;
-  padding: 0.75em 0.25em;
-  margin: 1em 0;
+  padding: 6px 2px;
+  margin: 12px 0px;
   font-size: 12px;
   color: #5C7187;
+
+  max-height: 200px;
+  min-height: 80px;
+  vertical-align: top;
+  width: 98%;
+
 
 }
 
 .recommendedArticleItem {
   background-color: #f9fafc;
-
   color: #333F4A;
   border-radius: 5px;
-  align-items: left;
-  justify-content: left;
-  max-height: 150px;
+  max-height: 200px;
   min-height: 80px;
-  alignment: center;
-  vertical-align: top;
-  width: 210px;
-  padding: 0.75em 0.25em;
-  margin: 1.2em 0;
+  padding: 1em 0.2em;
+  margin: 1em 0em;
   font-size: 12px;
   color: #5C7187;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  alignment: center;
+  width: 98%;
+
 }
 
 /* .content {
@@ -297,6 +273,8 @@ body {
   color: #5C7187;
   font-weight: 400;
   padding: 0.25em 0.25em 0.5em 0.25em;
+  display: inline;
+  float: left;
 
 }
 
@@ -308,7 +286,10 @@ body {
 }
 
 .readLaterSection, .readNowSection {
-  padding: 1em 0.5em;
+  padding: 1em 0.25em;
+  float: left;
+  display: block;
+  clear: both;
 }
 
 
@@ -318,8 +299,9 @@ body {
   font-family: "Open Sans";
   font-weight: 440;
   padding: 0.1em 0.2em;
-  /* line-height: 1.25em; */
   margin: 0px 0px 6px 0px;
+  float: left;
+  display: inline;
 }
 
 .newswireItemArticleTitle {
@@ -345,9 +327,10 @@ body {
 
 .newsWireButtons {
   display:inline;
-  margin: 6px 0px;
-  padding: 13px;
+  /* margin: 6px 0px;
+  padding: 13px; */
   float: right;
+
 }
 
 h1, h2, h3, h4 {
@@ -358,7 +341,7 @@ h1, h2, h3, h4 {
 
 .readNow {
   display:block;
-  background-color: #f6f8fe;
+  background-color: #fafbfc;
   color: #333F4A;
   margin: 0.5em 0;
   padding: 0.2em;
@@ -374,7 +357,6 @@ h1, h2, h3, h4 {
   /* display: flex; */
   align-items: right;
   justify-content: right;
-  /* flex-direction: column; */
   max-height: 100px;
   min-height: 25px;
   alignment: center;
@@ -388,43 +370,53 @@ h1, h2, h3, h4 {
 
 button.readNow {
   border: none;
-background-color: #64DEDA;
-font-family: "Open Sans";
-color: white;
-font-size: 11px;
-margin: 3px 12px;
-padding: 6px 6px;
-border-radius: 6px;
-display: inline;
-align-items: right;
-justify-content: right;
+  background-color: #ebf0f591;
+  color: #1E79FF;
+  font-family: "Open Sans";
+  display: inline;
+  align-items: right;
+  justify-content: right;
 }
 
-button.readNow.saved {
-  font-size: 11px;
+button {
+  background-color: #ebf0f591;
+
+  margin: 3px 8px;
+  padding: 1px 3px;
+  border-radius: 6px;
+  border: none;
 }
+
+.readNowButtons {
+  float: right;
+  display: block;
+  clear: both;
+}
+
+
+
+.material-icons {
+  margin: 2px 2px;
+  padding: 1px 2px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
 
 button.readLater {
-  border: none;
-background-color: #35a8f2e3;
 font-family: "Open Sans";
-color: white;
-font-size: 11px;
-margin: 6px 6px;
-padding: 6px 6px;
-border-radius: 6px;
+color: #44CBDA;
 
 }
+
+
 
 button.delete {
   border: none;
-background-color: #FF5370;
-font-family: "Open Sans";
-color: white;
-font-size: 11px;
-margin: 6px 6px;
-padding: 6px 6px;
-border-radius: 6px;
+  background-color: #ebf0f591;
+  font-family: "Open Sans";
+  color: #fe8483;
 }
 
 ol {

@@ -20,6 +20,15 @@ class ArticleItem extends React.Component {
     return (
       <div className="articleItemNewswire">
         <div className="articleItemInfo">
+          <div className="newsWireButtons">
+            <span className="button read-now">
+              <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
+            </span>
+            <span className="button read-later">
+              <button onClick={this.handleReadLater} className="readLater"><i className="material-icons">collections_bookmark</i></button>
+            </span>
+
+          </div>
           <span className="wireItemSection">{this.props.article.section}</span> | <span className="wireItemDate">{articleDate}</span>
           <h3 className="newswireItemArticleTitle">{this.props.article.title}</h3>
           <div className="imgAbstractFloat">
@@ -33,15 +42,7 @@ class ArticleItem extends React.Component {
             </div>
           </div>
 
-          <div className="newsWireButtons">
-            <span className="button read-now">
-              <button onClick={this.handleReadNow} className="readNow">Read</button>
-            </span>
-            <span className="button read-later">
-              <button onClick={this.handleReadLater} className="readLater">Save</button>
-            </span>
 
-          </div>
         </div>
 
 
