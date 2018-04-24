@@ -2,6 +2,7 @@ import React from 'react'
 import { nytimes_key } from '../../ApiKeys'
 import 'isomorphic-fetch';
 import RecommendedArticleItem from './RecommendedArticleItem'
+import RecommendationList from './RecommendationList'
 
 
 
@@ -85,10 +86,13 @@ startInterval = () => {
 
     return (
       <div>
+
       <span className="readLaterHeader"> Recommended Reading</span>
-        {this.state.recommendedArticles.map((a) => {
-          return <RecommendedArticleItem recommendedArticle = {a} handleSaveArticleToReadLater={this.props.handleSaveArticleToReadLater} handleReadArticle={this.props.handleReadArticle} />
+        {this.props.likedSections.map((s) => {
+          return <RecommendationList section={s} recommendedArticles={this.state.recommendedArticles.filter((a) => a.section == s)} handleSaveArticleToReadLater={this.props.handleSaveArticleToReadLater} handleReadArticle={this.props.handleReadArticle} />
         })}
+
+
       </div>
     )
   }
