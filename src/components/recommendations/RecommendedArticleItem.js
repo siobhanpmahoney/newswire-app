@@ -20,10 +20,12 @@ class RecommendedArticle extends React.Component {
 }
 
   render() {
+
     const articleDate = `${(new Date(this.props.recommendedArticle.updated_date)).getMonth() + 1}/${(new Date(this.props.recommendedArticle.updated_date)).getDate()}/${(new Date(this.props.recommendedArticle.updated_date)).getFullYear()}`;
 
     return (
       <div className="recommendedArticleItem">
+        <div className="recommendedArticleItemContent">
         <div className="readNowButtons">
         <span className="button read-now">
           <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i>
@@ -37,7 +39,7 @@ class RecommendedArticle extends React.Component {
       </div><br />
       <span className="readLaterInfo">{this.props.recommendedArticle.section} | {this.formattedDate(this.props.recommendedArticle.published_date)} </span> <br />
       <span className="readLaterArticleTitle">{this.props.recommendedArticle.title}</span>
-
+</div>
         </div>);
 };}
 
