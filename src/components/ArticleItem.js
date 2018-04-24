@@ -15,7 +15,7 @@ class ArticleItem extends React.Component {
   }
 
   dynamicIcon = () => {
-    debugger
+    
     if (this.props.readLater.find((a) => {
       return a.title == this.props.article.title
     })) {

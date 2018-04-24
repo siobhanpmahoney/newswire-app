@@ -49,7 +49,7 @@
   font-family: "Open Sans";
   font-weight: 600;
   height: 110px;
-  width: 100%;
+  /* width: 100%; */
   padding: 0.65em 0.5em 0 0.5em;
   font-size:3em;
 }
@@ -64,8 +64,11 @@ body {
   /* background: #f6f7fb;
   background-image: linear-gradient(60deg, #25344b 0%, #485563 100%); */
   font-family: "Open Sans";
-  background: #ECF2F9;
+  background: #edf3f9;
   display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
   /* background-color: #cfdae6; */
   /* background: #25344b; */
 
@@ -73,15 +76,19 @@ body {
 
 .sidebar-and-feed {
   display: flex;
+  position: relative;
+  /* width: 100%; */
+  height: 100%;
 
 }
 
 .sidebar {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  background-color: #cfdae6;
+  background-color: #CAD7E5;
   /* flex-wrap: nowrap; */
-  width: 30%;
+  width: 54%;
+  position: relative;
   margin: 3.5em 0.5em 1em 0.5em;
   padding: 0.5em;
   border-radius: 4px;
@@ -97,24 +104,25 @@ body {
   overflow: auto;
   background-color: #7590AC;
   color: white;
-  margin: 3.5em 0.5em 1em 1em;
+  margin: 3.5em 0.5em 1em 0.5em;
   padding: 0.5em;
   border-radius: 4px;
 
   justify-content: flex-start;
   align-items: flex-start;
 
-  width: 30%;
+  width: 54%;
+  position: relative;
   vertical-align: top;
   align-content: flex-start;
 }
 
 .news-wire, {
-  display: inline-flex;
-  width: 40%;
+  display: flex;
+
   justify-content: center;
   align-items: flex-start;
-
+  position: relative;
   margin: 1em;
 }
 
@@ -131,24 +139,28 @@ body {
   margin: 0.25em 0.25em 0.25em 1em;
 }
 
+.articleItemNewswire:hover, .readLaterArticleItem:hover, .recommendedArticleItem:hover {
+  /* transform: scale(1.03);
+  transition-timing-function: ease; */
+  transform: scale3d(1.02,1.02,1.1);
+
+}
 
 .articleItemNewswire {
+  transition: all 0.4s ease-in;
   border-radius: 3px;
   min-height: 200px;
   max-height: 380px;
   box-shadow: 0 4px 4px rgba(0,0,0,0.15), 0 4px 4px rgba(0,0,0,0.2);
-  padding: 0.5em;
+  padding: 0.25em;
   color: #25344b;
   background-color: #f6f7fb;
   margin: 1em;
-
   display: flex;
-
   alignment: left;
   justify-content: center;
-  flex-direction: row;
-  flex-direction: column;
 
+  flex-direction: column;
   width: 95%;
 }
 
@@ -167,12 +179,12 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-
+  transition: all 0.3s ease-in;
 }
 
 .readLaterArticleItemContent {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .recommendedArticleItem {
@@ -191,11 +203,12 @@ body {
   alignment: center;
   width: 98%;
   display: flex;
+  transition: all 0.3s ease-in;
 }
 
 .recommendedArticleItemContent {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* .content {
@@ -286,7 +299,6 @@ body {
   padding: 0.2em 0.25em 0.5em 0.25em;
   display: inline;
   float: left;
-
 
 }
 
@@ -392,7 +404,7 @@ button.readNow {
 
 button {
   background-color: #f6f7fb;
-  margin: 3px 8px;
+  margin: 3px 6px;
   padding: 0px 3px;
   border-radius: 6px;
   border: none;
@@ -411,7 +423,7 @@ button {
   padding: 1px 2px;
   border-radius: 6px;
   border: none;
-  font-size: 14px;
+  font-size: 15px;
   display:inline;
 }
 
@@ -419,6 +431,7 @@ button {
 button.readLater {
 font-family: "Open Sans";
 color: #1E79FF;
+font-size: 15px;
 ;
 
 }

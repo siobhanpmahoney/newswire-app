@@ -105,7 +105,7 @@ class App extends Component {
       }
       else {
         console.log(this.state.readNow.length)
-        alert("Looks like you've hit your limit of 15 free articles this month. Subscribe now for unlimited access to our content.")
+        alert("Looks like you've hit your limit of 15 free articles this month. Please sign up for one of the subscription options offered by the Times.")
       }
 
     }
