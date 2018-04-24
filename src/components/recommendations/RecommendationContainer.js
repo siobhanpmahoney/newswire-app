@@ -89,7 +89,7 @@ startInterval = () => {
 
       <span className="readLaterHeader"> Recommended Reading</span>
         {this.props.likedSections.map((s) => {
-          return <RecommendationList section={s} recommendedArticles={this.state.recommendedArticles.filter((a) => a.section == s)} handleSaveArticleToReadLater={this.props.handleSaveArticleToReadLater} handleReadArticle={this.props.handleReadArticle} />
+          return <RecommendationList section={s} recommendedArticles={this.state.recommendedArticles.filter((a) => a.section == s)} readLater={this.props.readLater} handleSaveArticleToReadLater={this.props.handleSaveArticleToReadLater} dynamicIcon={this.props.dynamicIcon} handleReadArticle={this.props.handleReadArticle} />
         })}
 
 

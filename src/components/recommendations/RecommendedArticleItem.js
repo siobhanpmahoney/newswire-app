@@ -17,7 +17,18 @@ class RecommendedArticle extends React.Component {
   formattedDate = (date) => {
     let pubDate = new Date(date)
     return pubDate.toLocaleDateString()
-}
+  }
+
+  dynamicIcon = () => {
+
+    if (this.props.readLater.find((a) => {
+      return a.title == this.props.recommendedArticle.title
+    })) {
+      return (<i className="material-icons">bookmark</i>)
+    } else {
+      return (<i className="material-icons" onClick={this.handleReadLater}>bookmark_border</i>)
+    }
+  }
 
   render() {
 
@@ -32,9 +43,8 @@ class RecommendedArticle extends React.Component {
           </button>
         </span>
         <span className="button read-later">
-          <button onClick={this.handleReadLater} className="readLater">
-          <i className="material-icons">bookmark</i>
-        </button>
+
+        <button className="readLater">{this.dynamicIcon()}</button>
         </span>
       </div><br />
       <span className="readLaterInfo">{this.props.recommendedArticle.section} | {this.formattedDate(this.props.recommendedArticle.published_date)} </span> <br />

@@ -164,7 +164,7 @@ body {
   min-height: 80px;
   width: 98%;
   flex-direction: column;
-  display: inline-flex;
+  display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 
@@ -385,14 +385,13 @@ button.readNow {
   background-color: #f6f7fb;
   color: #273242;
   font-family: "Open Sans";
-  display: inline-flex;
+  display: inline;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 button {
   background-color: #f6f7fb;
-
   margin: 3px 8px;
   padding: 0px 3px;
   border-radius: 6px;
@@ -402,7 +401,7 @@ button {
 .readNowButtons {
   float: right;
   display: inline;
-  clear: both;
+
 }
 
 
@@ -413,6 +412,7 @@ button {
   border-radius: 6px;
   border: none;
   font-size: 14px;
+  display:inline;
 }
 
 
@@ -430,6 +430,7 @@ button.delete {
   background-color: #f6f7fb;
   font-family: "Open Sans";
   color: #718CA1;
+  display: inline;
 }
 
 ol {
