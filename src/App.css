@@ -156,7 +156,7 @@ body {
   background-color: #f9fafc;
   color: #333F4A;
   border-radius: 5px;
-  padding: 6px 2px;
+  padding: 8px 2px;
   margin: 12px 0px;
   font-size: 12px;
   color: #5C7187;
@@ -165,6 +165,8 @@ body {
   min-height: 80px;
   vertical-align: top;
   width: 98%;
+  justify-content: flex-start;
+  align-items: flex-start;
 
 
 }
@@ -175,7 +177,7 @@ body {
   border-radius: 5px;
   max-height: 200px;
   min-height: 80px;
-  padding: 1em 0.2em;
+  padding: 0.5em 0.2em 1em 0.2em;
   margin: 1em 0em;
   font-size: 12px;
   color: #5C7187;
@@ -370,26 +372,26 @@ h1, h2, h3, h4 {
 
 button.readNow {
   border: none;
-  background-color: #ebf0f591;
-  color: #1E79FF;
+  background-color: #f6f7fb;
+  color: #273242;
   font-family: "Open Sans";
-  display: inline;
-  align-items: right;
-  justify-content: right;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 button {
-  background-color: #ebf0f591;
+  background-color: #f6f7fb;
 
   margin: 3px 8px;
-  padding: 1px 3px;
+  padding: 0px 3px;
   border-radius: 6px;
   border: none;
 }
 
 .readNowButtons {
   float: right;
-  display: block;
+  /* display: block; */
   clear: both;
 }
 
@@ -406,7 +408,8 @@ button {
 
 button.readLater {
 font-family: "Open Sans";
-color: #44CBDA;
+color: #1E79FF;
+;
 
 }
 
@@ -414,9 +417,9 @@ color: #44CBDA;
 
 button.delete {
   border: none;
-  background-color: #ebf0f591;
+  background-color: #f6f7fb;
   font-family: "Open Sans";
-  color: #fe8483;
+  color: #718CA1;
 }
 
 ol {

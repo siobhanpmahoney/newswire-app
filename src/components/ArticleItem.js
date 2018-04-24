@@ -25,7 +25,9 @@ class ArticleItem extends React.Component {
               <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
             </span>
             <span className="button read-later">
-              <button onClick={this.handleReadLater} className="readLater"><i className="material-icons">collections_bookmark</i></button>
+              <button onClick={this.handleReadLater} className="readLater">
+              <i className="material-icons">bookmark</i>
+              </button>
             </span>
 
           </div>
