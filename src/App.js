@@ -124,15 +124,6 @@ class App extends Component {
     }
 
 
-dynamicIcon = (art) => {
-  if (this.state.readLater.find((a) => {
-    return a.title == art.title
-  })) {
-    return (<i className="material-icons">bookmark</i>)
-  } else {
-    return (<i className="material-icons" onClick={this.handleSaveArticleToReadLater(art)}>bookmark_border</i>)
-  }
-}
 
 
 
@@ -164,16 +155,14 @@ dynamicIcon = (art) => {
 
           <div className="news-wire content">
             <h2 className="news-wire-title">Latest Articles from the New York Times</h2>
-            <ArticleContainer
-              articles={this.state.articles}
-              handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
+            <ArticleContainer articles={this.state.articles} readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
                 </div>
 
 
 
 
             <div className="recommendedContainer">
-              <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} dynamicIcon={this.dynamicIcon} handleReadArticle={this.handleReadArticle}/>
+              <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle}/>
             </div>
 
         </div>
