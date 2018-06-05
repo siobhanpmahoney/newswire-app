@@ -15,7 +15,7 @@ class ArticleItem extends React.Component {
   }
 
   dynamicIcon = () => {
-    
+
     if (this.props.readLater.find((a) => {
       return a.title == this.props.article.title
     })) {
@@ -41,7 +41,7 @@ class ArticleItem extends React.Component {
 
           </div>
           <span className="wireItemSection">{this.props.article.section}</span> | <span className="wireItemDate">{articleDate}</span>
-          <h3 className="newswireItemArticleTitle">{this.props.article.title}</h3>
+          <div className="newswireItemArticleTitle">{this.props.article.title}</div>
           <div className="imgAbstractFloat">
             <div className="wireImg">
               {this.props.article.multimedia &&
