@@ -55,7 +55,7 @@ body {
   /* background: #f6f7fb;
   background-image: linear-gradient(60deg, #25344b 0%, #485563 100%); */
   font-family: "Open Sans";
-  background: #f9fafc;
+  background: white;
   /* display: flex; */
   position: relative;
   width: 100%;
@@ -137,19 +137,10 @@ body {
 
 
 .article-container {
-  /* width: 50%; */
-  /* display: flex;
-  flex-direction: column; */
-  /* justify-content: center; */
-   /* align-items: stretch; */
-   /* flex: 1; */
-  /* align-items: flex-start; */
   position: relative;
   margin: 1.5em;
-  /* order: 2; */
   order: 2;
   width: 50%;
-  /* display:inline-flex; */
   padding: 0.5em;
   margin: 1em;
   flex: 1;
@@ -224,6 +215,10 @@ body {
   /* width: 100%; */
 }
 
+summary {
+  font-family: "Open Sans";
+}
+
 .recommendedArticleItem {
   background-color: #f9fafc;
   color: #333F4A;
@@ -267,7 +262,26 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  padding: 1em;
+  font-family: "Open Sans";
+  font-size: 1em;
+  /* padding: 0.35em; */
 }
+
+button.toggle-feed {
+  font-family: "Open Sans";
+  font-size: 0.8em;
+  padding: .35em;
+}
+
+button.toggle-feed#active {
+  background-color: #FF5370;
+  color: white;
+}
+
 
 .footer {
   /* grid-area: footer; */

@@ -147,6 +147,14 @@ class App extends Component {
       })
     }
 
+    toggleButtonId = (type) => {
+      if (this.state.articleWireType === type) {
+        return "active"
+      } else {
+        return "inactive"
+      }
+    }
+
 
 
 
@@ -160,7 +168,7 @@ class App extends Component {
           <div className="header"><span className="header-text">NYTimes NewsWire</span></div>
 
         <div className="toggle-feed-buttons">
-          <button onClick={this.toggleFeedType} value="latest">Latest</button>  | <button onClick={this.toggleFeedType} value="recommended">Recommendations</button>
+          <button className="toggle-feed" id={this.toggleButtonId("latest")} onClick={this.toggleFeedType} value="latest">Latest</button>  | <button className="toggle-feed"  id={this.toggleButtonId("recommended")} onClick={this.toggleFeedType}  value="recommended">Recommendations</button>
           </div>
 
         <div className="app-container">
