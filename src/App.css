@@ -198,7 +198,7 @@ body {
   border-radius: 5px;
   padding: 0.25em;
   margin: 12px 0px;
-  font-size: 12px;
+  font-size: 0.75em;
   color: #5C7187;
   max-height: 220px;
   min-height: 80px;
@@ -267,19 +267,29 @@ summary {
   align-content: center;
   padding: 1em;
   font-family: "Open Sans";
-  font-size: 1em;
+  font-size: 1.2em;
+  background: white;
   /* padding: 0.35em; */
 }
 
 button.toggle-feed {
   font-family: "Open Sans";
-  font-size: 0.8em;
+  background: white;
+  font-size: 100%;
+  /* font-size: 1.2em;
   padding: .35em;
+  background: white; */
+
 }
 
 button.toggle-feed#active {
-  background-color: #FF5370;
-  color: white;
+  font-weight: 600;
+  text-decoration: underline;
+  color:#485563;
+}
+
+button.toggle-feed#inactive {
+  color:#9CABCC;
 }
 
 
