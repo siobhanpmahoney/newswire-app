@@ -68,7 +68,7 @@ fetchRecommendedArticles = () => {
 
 
 startInterval = () => {
-  this.interval = setInterval(this.fetchRecommendedArticles, 12000)
+  this.interval = setInterval(this.fetchRecommendedArticles, 5000)
 }
 
 
@@ -85,9 +85,9 @@ startInterval = () => {
     console.log("in recs", this.props)
 
     return (
-      <div className="rec-wrapper">
+      <div className="article-container">
 
-      <span className="readLaterHeader"> Recommended Reading</span>
+      <h2 className="news-wire-title"> Recommended Reading</h2>
         {this.props.likedSections.map((s) => {
           return <RecommendationList section={s} recommendedArticles={this.state.recommendedArticles.filter((a) => a.section == s)} readLater={this.props.readLater} handleSaveArticleToReadLater={this.props.handleSaveArticleToReadLater}  handleReadArticle={this.props.handleReadArticle} />
         })}

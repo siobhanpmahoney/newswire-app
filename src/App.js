@@ -21,7 +21,8 @@ class App extends Component {
             articles: [],
             readNow: [],
             readLater: [],
-            likedSections: []
+            likedSections: [],
+            articleWireType: "latest",
         };
     }
 
@@ -32,7 +33,8 @@ class App extends Component {
             articles: json.results,
             readNow: ls.get('readNow') || [],
             readLater: ls.get('readLater') || [],
-            likedSections: ls.get('likedSections') || []
+            likedSections: ls.get('likedSections') || [],
+            articleWireType: "latest",
           }));
         this.startInterval()
     }
@@ -61,6 +63,7 @@ class App extends Component {
     }
 
     handleSaveArticleToReadLater = (art) => {
+      debugger
       let currentReadLaterState = this.state.readLater.slice(0)
       let currentLikedSections = this.state.likedSections.slice(0)
       let newReadLaterState = [...currentReadLaterState, art]
@@ -123,6 +126,27 @@ class App extends Component {
       ls.set('readLater', truncatedList)
     }
 
+    renderFeedType = () => {
+      if (this.state.articleWireType === "latest") {
+        return (
+
+              <ArticleContainer articles={this.state.articles} readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
+
+          )
+      } else {
+        return ( <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle}/>
+
+      )
+      }
+    }
+
+    toggleFeedType = (event) => {
+      let v = event.target.value
+      this.setState({
+        articleWireType: v
+      })
+    }
+
 
 
 
@@ -133,12 +157,14 @@ class App extends Component {
       console.log(nytimes_key)
       return (
         <div className="news-wire-top wrapper">
-          <div className="box header"><span className="header-text">NYTimes NewsWire</span></div>
+          <div className="header"><span className="header-text">NYTimes NewsWire</span></div>
 
+        <div className="toggle-feed-buttons">
+          <button onClick={this.toggleFeedType} value="latest">Latest</button>  | <button onClick={this.toggleFeedType} value="recommended">Recommendations</button>
+          </div>
 
-        <div class="sidebar-and-feed">
-
-          <div className="read-later box sidebar">
+        <div className="app-container">
+          <div className="sidebar">
             <div className="readLaterSection">
               <span className="readLaterHeader">Saved Articles</span>
 
@@ -153,19 +179,13 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="news-wire content">
-            <h2 className="news-wire-title">Latest Articles from the New York Times</h2>
-            <ArticleContainer articles={this.state.articles} readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
-                </div>
+            {this.renderFeedType()}
 
 
-
-
-            <div className="recommendedContainer">
-              <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle}/>
-            </div>
 
         </div>
+
+
         </div>
       );
     }

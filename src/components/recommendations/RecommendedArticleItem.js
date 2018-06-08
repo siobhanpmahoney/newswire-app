@@ -31,13 +31,14 @@ class RecommendedArticle extends React.Component {
   }
 
   render() {
+    console.log(this.props.recommendedArticle)
 
     const articleDate = `${(new Date(this.props.recommendedArticle.updated_date)).getMonth() + 1}/${(new Date(this.props.recommendedArticle.updated_date)).getDate()}/${(new Date(this.props.recommendedArticle.updated_date)).getFullYear()}`;
 
     return (
-      <div className="recommendedArticleItem">
-        <div className="recommendedArticleItemContent">
-        <div className="readNowButtons">
+      <div className="articleItemNewswire">
+        <div className="articleItemInfo">
+        <div className="newsWireButtons">
         <span className="button read-now">
           <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i>
           </button>
@@ -47,8 +48,24 @@ class RecommendedArticle extends React.Component {
         <button className="readLater">{this.dynamicIcon()}</button>
         </span>
       </div><br />
-      <span className="readLaterInfo">{this.props.recommendedArticle.section} | {this.formattedDate(this.props.recommendedArticle.published_date)} </span> <br />
-      <span className="readLaterArticleTitle">{this.props.recommendedArticle.title}</span>
+      <span className="wireItemSection">
+        {this.props.recommendedArticle.section}
+      </span> |
+        <span className="wireItemDate">  {this.formattedDate(this.props.recommendedArticle.published_date)}
+        </span> <br />
+      <div className="newswireItemArticleTitle">
+        {this.props.recommendedArticle.title}
+      </div>
+      <div className="imgAbstractFloat">
+        <div className="wireImg">
+          {this.props.recommendedArticle.media && this.props.recommendedArticle.media[0]["media-metadata"] &&
+            <img src={this.props.recommendedArticle.media[0]["media-metadata"][0].url } alt=""  />
+          }
+        </div>
+        <div className="wireItemAbstract">
+          {this.props.recommendedArticle.abstract}
+        </div>
+      </div>
 </div>
         </div>);
 };}
