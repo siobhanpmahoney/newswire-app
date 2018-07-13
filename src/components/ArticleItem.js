@@ -29,9 +29,18 @@ class ArticleItem extends React.Component {
     const articleDate = `${(new Date(this.props.article.updated_date)).getMonth() + 1}/${(new Date(this.props.article.updated_date)).getDate()}/${(new Date(this.props.article.updated_date)).getFullYear()}`;
 
     return (
-      <div className="articleItemNewswire">
-        <div className="articleItemInfo">
-          <div className="newsWireButtons">
+      <div className="wire-item-container">
+        <div className="wire-item-all-text">
+        <div className="wire-item-section">{this.props.article.section}</div>
+          <div className="wire-item-title">{this.props.article.title}</div>
+          <div className="wire-item-abstract">
+            {this.props.article.abstract}
+          </div>
+
+
+          <div className="wire-item-date">{articleDate}</div>
+
+          <div className="wire-item-buttons">
             <span className="button read-now">
               <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
             </span>
@@ -40,24 +49,17 @@ class ArticleItem extends React.Component {
             </span>
 
           </div>
-          <span className="wireItemSection">{this.props.article.section}</span> | <span className="wireItemDate">{articleDate}</span>
-          <div className="newswireItemArticleTitle">{this.props.article.title}</div>
-          <div className="imgAbstractFloat">
-            <div className="wireImg">
-              {this.props.article.multimedia &&
-                <img src={this.props.article.multimedia[0].url} alt=""  />
-              }
-            </div>
-            <div className="wireItemAbstract">
-              {this.props.article.abstract}
-            </div>
-          </div>
 
+</div>
+<div className="wire-item-img-section">
+{this.props.article.multimedia &&
+  <img src={this.props.article.multimedia[0].url} alt="" className="wire-item-img" />
+}
+</div>
 
-        </div>
 
 
         </div>);
-};}
+      };}
 
-export default ArticleItem;
+      export default ArticleItem;
