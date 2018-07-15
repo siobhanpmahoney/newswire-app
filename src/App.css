@@ -93,8 +93,20 @@ body {
 
 
 .recommendedContainer {
+  position: relative;
+  max-width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  order: 2;
+  justify-content: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+  align-content: flex-start;
+  box-sizing: border-box;
+  margin-right: 24px;
 
-  overflow: auto;
+  /* overflow: auto;
   padding: 0.5em;
   border-radius: 4px;
   justify-content: flex-start;
@@ -103,7 +115,7 @@ body {
   flex-direction: column;
   position: relative;
   vertical-align: top;
-  align-content: flex-start;
+  align-content: flex-start; */
 }
 
 .rec-wrapper {
@@ -143,7 +155,7 @@ body {
 }
 
 
-.wire-item-container {
+.wire-item-container, .recommended-item-container {
   width: 100%;
   font-size: 100%;
   position: relative;

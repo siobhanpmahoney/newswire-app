@@ -85,7 +85,7 @@ startInterval = () => {
     console.log("in recs", this.props)
 
     return (
-      <div className="article-container">
+      <div className="wire-container">
 
       <h2 className="news-wire-title"> Recommended Reading</h2>
         {this.props.likedSections.map((s) => {

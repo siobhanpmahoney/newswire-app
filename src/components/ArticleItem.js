@@ -30,44 +30,48 @@ class ArticleItem extends React.Component {
 
     return (
       <div className="wire-item-container-block-wrapper">
-      <div className="wire-item-container">
-        <div className="wire-item-all-text">
-        <div className="wire-item-section">{this.props.article.section}</div>
-          <div className="wire-item-title" onClick={this.handleReadNow}>
-            {this.props.article.title}
+        <div className="wire-item-container">
+          <div className="wire-item-all-text">
+            <div className="wire-item-section">
+              {this.props.article.section}
+            </div>
+
+            <div className="wire-item-title" onClick={this.handleReadNow}>
+              {this.props.article.title}
+            </div>
+
+            <div className="wire-item-abstract">
+              {this.props.article.abstract}
+            </div>
+
+            <div className="wire-item-bottom">
+              <div className="wire-item-date">
+                {articleDate}
+              </div>
+
+              <span className="wire-item-buttons">
+                <button className="readLater">
+                  {this.dynamicIcon()}
+                </button>
+              </span>
+            </div>
           </div>
-          <div className="wire-item-abstract">
-            {this.props.article.abstract}
+          <div className="wire-item-img-section">
+
+            {this.props.article.multimedia &&
+              <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
+            }
+
+
           </div>
-          <div className="wire-item-bottom">
-            <div className="wire-item-date">{articleDate}</div>
-          <span className="wire-item-buttons">
 
 
 
 
-              <button className="readLater">{this.dynamicIcon()}</button>
+        </div>
 
 
-          </span>
-          </div>
-</div>
-<div className="wire-item-img-section">
+      </div>);
+    };}
 
-{this.props.article.multimedia &&
-  <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
-}
-
-
-</div>
-
-
-
-
-</div>
-
-
-        </div>);
-      };}
-
-      export default ArticleItem;
+    export default ArticleItem;
