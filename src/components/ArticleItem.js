@@ -19,9 +19,9 @@ class ArticleItem extends React.Component {
     if (this.props.readLater.find((a) => {
       return a.title == this.props.article.title
     })) {
-      return (<i className="material-icons">bookmark</i>)
+      return (<i className="material-icons bookmark" style={{color:"#79cac6"}}>bookmark</i>)
     } else {
-      return (<i className="material-icons" onClick={this.handleReadLater}>bookmark_border</i>)
+      return (<i className="material-icons bookmark_border" style={{color:"#79cac6"}} onClick={this.handleReadLater}>bookmark_border</i>)
     }
   }
 
@@ -29,35 +29,51 @@ class ArticleItem extends React.Component {
     const articleDate = `${(new Date(this.props.article.updated_date)).getMonth() + 1}/${(new Date(this.props.article.updated_date)).getDate()}/${(new Date(this.props.article.updated_date)).getFullYear()}`;
 
     return (
-      <div className="articleItemNewswire">
-        <div className="articleItemInfo">
-          <div className="newsWireButtons">
-            <span className="button read-now">
-              <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
-            </span>
-            <span className="button read-later">
-              <button className="readLater">{this.dynamicIcon()}</button>
-            </span>
+      <div className="wire-item-container-block-wrapper">
+        <div className="wire-item-container">
+
+          <div className="wire-item-img-section">
+
+            {this.props.article.multimedia &&
+              <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
+            }
+
 
           </div>
-          <span className="wireItemSection">{this.props.article.section}</span> | <span className="wireItemDate">{articleDate}</span>
-          <div className="newswireItemArticleTitle">{this.props.article.title}</div>
-          <div className="imgAbstractFloat">
-            <div className="wireImg">
-              {this.props.article.multimedia &&
-                <img src={this.props.article.multimedia[0].url} alt=""  />
-              }
+
+          <div className="wire-item-all-text">
+            <div className="wire-item-section">
+              {this.props.article.section}
             </div>
-            <div className="wireItemAbstract">
+
+            <div className="wire-item-title" onClick={this.handleReadNow}>
+              {this.props.article.title}
+            </div>
+
+            <div className="wire-item-abstract">
               {this.props.article.abstract}
             </div>
+
+            <div className="wire-item-bottom">
+              <div className="wire-item-date">
+                {articleDate}
+              </div>
+
+              <span className="wire-item-buttons">
+                <button className="readLater">
+                  {this.dynamicIcon()}
+                </button>
+              </span>
+            </div>
           </div>
+
+
 
 
         </div>
 
 
-        </div>);
-};}
+      </div>);
+    };}
 
-export default ArticleItem;
+    export default ArticleItem;
