@@ -37,28 +37,29 @@ class ArticleItem extends React.Component {
           <div className="wire-item-abstract">
             {this.props.article.abstract}
           </div>
+          <div className="wire-item-bottom">
+            <div className="wire-item-date">{articleDate}</div>
+          <span className="wire-item-buttons">
+
+              <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
 
 
-          <span className="wire-item-date">{articleDate}</span>
+              <button className="readLater">{this.dynamicIcon()}</button>
 
 
-
+          </span>
+          </div>
 </div>
 <div className="wire-item-img-section">
 
 {this.props.article.multimedia &&
   <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
 }
-<span className="wire-item-buttons">
-
-    <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
 
 
-    <button className="readLater">{this.dynamicIcon()}</button>
-
-
-</span>
 </div>
+
+
 
 
 </div>
