@@ -14,17 +14,12 @@
 
 .header,
 .footer {
-  /* background-image: linear-gradient(to top, #50c9c3 0%, #96deda  100%); */
 
-  background: #f6f7fb;
-  background-image: linear-gradient(60deg, #25344b 0%, #485563 100%);
-
-  color: white;
-  font-family: "Open Sans";
   font-weight: 600;
   height: 110px;
   padding: 0.65em 0.5em 0 0.5em;
   font-size:3em;
+  background: white;
 }
 
 .header-text {
@@ -32,13 +27,33 @@
   margin-top: 1em;
 }
 
-body {
-  margin: 0.5em;
-  font-family: "Open Sans";
-  background: white;
+html {
   position: relative;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: linear-gradient(225deg, #f6f6f6 0%, #fdfcfb 100%);
+    background-size: cover;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(225deg, #f6f6f6 0%, #fdfcfb 100%);
+  background-size: cover;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(225deg, #f6f6f6 0%, #fdfcfb 100%);
+  background-size: cover;
 }
 
 .news-wire-top {
@@ -55,13 +70,13 @@ body {
   flex: 1 1 auto;
   width: 100%;
   position: relative;
+
 }
 
 
 .sidebar {
   display: inline-flex;
   flex-direction: column;
-  background-color: #CAD7E5;
   order: 1;
   max-width: 28%;
   position: relative;
@@ -71,9 +86,8 @@ body {
 
 
 .recommendedContainer {
+
   overflow: auto;
-  background-color: #7590AC;
-  color: white;
   margin: 3.5em 1em 1em 1em;
   padding: 0.5em;
   border-radius: 4px;
@@ -96,16 +110,18 @@ body {
 }
 
 .wire-container {
+
   position: relative;
   max-width: 65%;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   flex: 1 1 auto;
   order: 2;
-  justify-content: flex-start;
+  justify-content: stretch;
   align-items: flex-start;
-  flex-direction: row;
+  flex-direction: column;
   align-content: flex-start;
+  box-sizing: border-box;
 
 }
 
@@ -113,30 +129,36 @@ body {
 
 }
 
+.wire-item-container-block-wrapper {
+  position: block;
+  width: 100%;
+    margin-bottom: 48px;
+}
+
 
 .wire-item-container {
   width: 100%;
   font-size: 100%;
-  margin-bottom: 48px;
   /* text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; */
   position: relative;
   display: flex;
-  height: auto;
+  max-height: auto;
   flex: 1 1 auto;
   align-self: stretch;
   align-items: stretch;
   align-content:stretch;
   justify-content: space-around;
+
 }
 
 .wire-item-all-text {
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
 
   flex-wrap: wrap;
   position: relative;
-  max-width: 70%;
+  max-width: 65%;
   flex: 1 1 auto;
 
 
@@ -146,11 +168,12 @@ body {
 
 .wire-item-section {
   font-style: normal;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   letter-spacing: .03em;
   text-transform: uppercase;
   text-align: left;
+  display: block;
 }
 
 .wire-item-title {
@@ -161,6 +184,7 @@ body {
   /* transform: translateY(-.72px); */
   letter-spacing: -.42px;
   margin-bottom: 2px;
+  position: block;
 }
 
 
@@ -168,7 +192,7 @@ body {
   /* max-height: 80px; */
   text-overflow: ellipsis;
   display: -webkit-box;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   margin-top: 2px;
   text-align: left;
@@ -188,7 +212,7 @@ body {
   line-height: 20px;
   text-align: left;
   line-height: 1.4;
-  display: inline-flex;
+  display: inline;
 
 
 }
@@ -211,6 +235,8 @@ body {
 
   flex-direction: column;
   max-width: 20%;
+
+  height: auto;
   flex: 1 1 auto;
 }
 
@@ -219,51 +245,51 @@ body {
 
 .wire-item-img {
   width: 100%;
+  max-height: 100%;
   box-sizing: border-box;
+  height: auto;
+
+
 }
 
 
 .wire-item-buttons {
-
-
+  display: inline;
+  float: right;
 }
 
 .readLaterArticleItem {
-  background-color: #f9fafc;
-  color: #333F4A;
   border-radius: 5px;
   padding: 0.25em;
   margin: 12px 0px;
   font-size: 0.75em;
-  color: #5C7187;
   max-height: 220px;
   min-height: 80px;
   width: 98%;
-  flex-direction: column;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: block;
+
   transition: all 0.3s ease-in;
 }
 
 .readLaterArticleItemContent {
   height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 summary {
-  font-family: "Open Sans";
+
 }
 
 .recommendedArticleItem {
-  background-color: #f9fafc;
-  color: #333F4A;
   border-radius: 5px;
   max-height: 200px;
   min-height: 80px;
   padding: 0.5em 0.2em 1em 0.2em;
   margin: 1em 0em;
   font-size: 12px;
-  color: #5C7187;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -296,14 +322,12 @@ summary {
   justify-content: center;
   align-content: center;
   padding: 1em;
-  font-family: "Open Sans";
+
   font-size: 1.2em;
-  background: white;
 }
 
 button.toggle-feed {
-  font-family: "Open Sans";
-  background: white;
+
   font-size: 100%;
 
 }
@@ -311,11 +335,9 @@ button.toggle-feed {
 button.toggle-feed#active {
   font-weight: 600;
   text-decoration: underline;
-  color:#485563;
 }
 
 button.toggle-feed#inactive {
-  color:#9CABCC;
 }
 
 
@@ -323,8 +345,6 @@ button.toggle-feed#inactive {
 }
 
 .wrapper {
-
-        color: #444;
     }
 
 
@@ -357,8 +377,7 @@ button.toggle-feed#inactive {
 
 .readLaterInfo {
   font-size: 11px;
-  font-family: "Open Sans";
-  color: #5C7187;
+
   font-weight: 400;
   padding: 0.2em 0.25em 0.5em 0.25em;
   display: inline;
@@ -367,7 +386,7 @@ button.toggle-feed#inactive {
 }
 
 .viewHistoryHeader, .readLaterHeader {
-  font-family: "Open Sans";
+
   font-size: 16px;
   font-weight: 580;
 
@@ -385,7 +404,7 @@ button.toggle-feed#inactive {
 
 .readLaterArticleTitle {
   font-size: 12px;
-  font-family: "Open Sans";
+
   font-weight: 440;
   padding: 0.1em 0.2em;
   margin: 0px 0px 6px 0px;
@@ -396,23 +415,19 @@ button.toggle-feed#inactive {
 
 
 h1, h2, h3, h4 {
-  font-family: "Open Sans";
+
   font-weight: 600;
 
 }
 
 .readNow {
   display:block;
-  background-color: #fafbfc;
-  color: #333F4A;
   margin: 0.5em 0;
   padding: 0.2em;
   border-radius: 5px;
 }
 
 .readNowArticleTitle {
-
-  color: #333F4A;
   font-size: 12px;
   line-height: 1.25em;
   border-radius: 5px;
@@ -430,18 +445,15 @@ h1, h2, h3, h4 {
 
 button.readNow {
   border: none;
-  background-color: #f6f7fb;
-  color: #273242;
-  font-family: "Open Sans";
+
   display: inline;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 button {
-  background-color: #f6f7fb;
   margin: 3px 6px;
-  padding: 0px 3px;
+  padding: 0px 0px;
   border-radius: 6px;
   border: none;
 }
@@ -465,8 +477,7 @@ button {
 
 
 button.readLater {
-font-family: "Open Sans";
-color: #1E79FF;
+
 font-size: 15px;
 ;
 
@@ -476,9 +487,8 @@ font-size: 15px;
 
 button.delete {
   border: none;
-  background-color: #f6f7fb;
-  font-family: "Open Sans";
-  color: #718CA1;
+
+
   display: inline;
 }
 
@@ -488,5 +498,5 @@ ol {
 }
 
 li {
-  font-family: "Open Sans";
+
 }

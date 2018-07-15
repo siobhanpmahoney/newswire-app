@@ -29,6 +29,7 @@ class ArticleItem extends React.Component {
     const articleDate = `${(new Date(this.props.article.updated_date)).getMonth() + 1}/${(new Date(this.props.article.updated_date)).getDate()}/${(new Date(this.props.article.updated_date)).getFullYear()}`;
 
     return (
+      <div className="wire-item-container-block-wrapper">
       <div className="wire-item-container">
         <div className="wire-item-all-text">
         <div className="wire-item-section">{this.props.article.section}</div>
@@ -38,25 +39,29 @@ class ArticleItem extends React.Component {
           </div>
 
 
-          <div className="wire-item-date">{articleDate}</div>
+          <span className="wire-item-date">{articleDate}</span>
 
-          <div className="wire-item-buttons">
-            <span className="button read-now">
-              <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
-            </span>
-            <span className="button read-later">
-              <button className="readLater">{this.dynamicIcon()}</button>
-            </span>
 
-          </div>
 
 </div>
 <div className="wire-item-img-section">
+
 {this.props.article.multimedia &&
-  <img src={this.props.article.multimedia[0].url} alt="" className="wire-item-img" />
+  <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
 }
+<span className="wire-item-buttons">
+
+    <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
+
+
+    <button className="readLater">{this.dynamicIcon()}</button>
+
+
+</span>
 </div>
 
+
+</div>
 
 
         </div>);
