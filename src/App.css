@@ -20,6 +20,7 @@
   padding: 0.65em 0.5em 0 0.5em;
   font-size:3em;
   background: white;
+  color: #292929;
 }
 
 .header-text {
@@ -155,6 +156,7 @@ body {
   flex-wrap: nowrap;
   background: white;
   padding: 12px;
+  box-shadow: 0 6px 15px rgba(36,37,38,0.08);
 
 }
 
