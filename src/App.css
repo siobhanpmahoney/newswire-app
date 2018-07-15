@@ -321,7 +321,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 0px 0px;
+  padding: 0px 4px;
   margin: 2px 0px;
 }
 
@@ -456,12 +456,13 @@ button.toggle-feed#inactive {
 
 
 .read-later-article-container, .readNow{
-  padding: 8px 8px;
+  padding: 0px 8px;
   float: left;
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
   background-color: white;
+
 
 }
 
@@ -478,6 +479,7 @@ button.toggle-feed#inactive {
   padding: 0px;
   font-size: 20px;
   font-weight: 580;
+  padding: 8px;
 
 }
 
@@ -502,6 +504,7 @@ button.toggle-feed#inactive {
   display: inline-flex;
   align-items: flex-start;
   float: left;
+
 
 }
 
