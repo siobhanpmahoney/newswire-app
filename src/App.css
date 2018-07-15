@@ -87,7 +87,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   order: 1;
-  max-width: 28%;
+  max-width: 25%;
   position: relative;
   border-radius: 4px;
   align-content: flex-start;
@@ -304,8 +304,9 @@ body {
 
 .readLaterArticleItem {
   padding: 0.25em;
-  max-height: 220px;
-  min-height: 80px;
+  height: 100px;
+  /* max-height: 220px;
+  min-height: 80px; */
   width: 98%;
   display: block;
   border-bottom: solid 1px #292929;
@@ -320,7 +321,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 8px 0px;
+  padding: 0px 0px;
   margin: 2px 0px;
 }
 
@@ -451,15 +452,11 @@ button.toggle-feed#inactive {
   display: inline;
 }
 
-.viewHistoryHeader, .readLaterHeader {
 
-  font-size: 16px;
-  font-weight: 580;
 
-}
 
-.read-later-article-container, .readNowSection {
-  padding: 1em;
+.read-later-article-container, .readNow{
+  padding: 8px 8px;
   float: left;
   display: flex;
   flex-direction: column;
@@ -468,9 +465,8 @@ button.toggle-feed#inactive {
 
 }
 
-.readLaterHeader {
-  background-color: #d8efee;
-  min-height: 100px;
+.readLaterHeader, .viewHistoryHeader {
+  min-height: 80px;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -480,6 +476,17 @@ button.toggle-feed#inactive {
   width: 100%;
   box-sizing: border-box;
   padding: 0px;
+  font-size: 20px;
+  font-weight: 580;
+
+}
+
+.readLaterHeader {
+    background-color: #d8efee;
+}
+
+.viewHistoryHeader {
+  background-color: #fce7dd;
 }
 
 .readLaterArticleSection {
@@ -547,24 +554,26 @@ h1, h2, h3, h4 {
 
 .readNow {
   display:block;
-  margin: 0.5em 0;
-  padding: 0.2em;
-  border-radius: 5px;
+
+}
+
+.readNowArticle {
+  align-items: right;
+  justify-content: right;
+    width: 100%;
 }
 
 .readNowArticleTitle {
-  font-size: 12px;
-  line-height: 1.25em;
-  border-radius: 5px;
-  align-items: right;
-  justify-content: right;
-  max-height: 100px;
-  min-height: 25px;
+  font-size: 14px;
+  line-height: 16px;
+
+  /* height: 75px; */
+  margin-bottom: 24px;
   alignment: center;
   font-family:sans-serif;
   font-weight: 440;
-  width: 225px;
-  margin: 0.5em 0.5em 1em 0;
+
+
 }
 
 
