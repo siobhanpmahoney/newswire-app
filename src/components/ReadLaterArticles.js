@@ -33,11 +33,13 @@ class ReadLaterArticles extends React.Component {
             </div>
                     <div className="readLaterArticleButtons">
                       <button onClick={this.handleReadNow} className="readLaterArticleReadNowButton">
-                        <i className="material-icons">open_in_new</i>
+                        <i className="material-icons" >open_in_new</i>
                     </button>
 
                       <button onClick={this.deleteArticle} className="readLaterArticleDeleteButton">
-                        <i className="material-icons">delete_forever</i>
+                        <i class="material-icons" style={{color:"#ef7979"}}>
+close
+</i>
                       </button>
                     </div>
 </div>

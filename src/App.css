@@ -3,6 +3,7 @@
 
 .App {
   text-align: center;
+  color: #292929;
 
 }
 
@@ -87,13 +88,13 @@ body {
   position: relative;
   border-radius: 4px;
   align-content: flex-start;
+    margin-left: 18px;
 }
 
 
 .recommendedContainer {
 
   overflow: auto;
-  margin: 3.5em 1em 1em 1em;
   padding: 0.5em;
   border-radius: 4px;
   justify-content: flex-start;
@@ -117,7 +118,7 @@ body {
 .wire-container {
 
   position: relative;
-  max-width: 65%;
+  max-width: 60%;
   display: flex;
   flex-wrap: wrap;
   flex: 1 1 auto;
@@ -127,7 +128,7 @@ body {
   flex-direction: column;
   align-content: flex-start;
   box-sizing: border-box;
-  margin-right: 18px;
+  margin-right: 24px;
 
 }
 
@@ -191,6 +192,7 @@ body {
   letter-spacing: -.42px;
   margin-bottom: 2px;
   position: block;
+  color: #292929;
 }
 
 
@@ -264,7 +266,9 @@ body {
   width: 98%;
   display: block;
   border-bottom: solid 1px #292929;
-  padding: 16px 0px
+
+  margin-bottom: 16px;
+  margin-top: 4px;
 }
 
 .readLaterArticleItemContent {
@@ -273,6 +277,8 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  padding: 8px 0px;
+  margin: 2px 0px;
 }
 
 summary {
@@ -383,20 +389,34 @@ button.toggle-feed#inactive {
 
 }
 
-.readLaterSection, .readNowSection {
+.read-later-article-container, .readNowSection {
   padding: 1em;
   float: left;
   display: flex;
   flex-direction: column;
   margin-bottom: 48px;
   background-color: white;
-  margin-left: 24px;
+
+}
+
+.readLaterHeader {
+  background-color: #d8efee;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  line-height: 20px;
+  font-size: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
 }
 
 .readLaterArticleSection {
   font-size: 12px;
   box-sizing: border-box;
-  color: #33333380;
+  color: #292929;
   letter-spacing: 1px;
   border: 1px solid black;
   margin-bottom: 8px;
@@ -414,6 +434,7 @@ button.toggle-feed#inactive {
   align-content: space-between;
   align-items: stretch;
   width: 100%;
+  padding-bottom: 6px;
 }
 
 .readLaterArticleButtons {
@@ -426,6 +447,7 @@ button.toggle-feed#inactive {
   display: inline;
   font-size: 14px;
   line-height: 16px;
+  color: #292929;
 }
 
 .readLaterArticleDate {

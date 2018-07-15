@@ -174,7 +174,7 @@ class App extends Component {
         <div className="app-container">
           <div className="sidebar">
             <div className="readLaterSection">
-              <span className="readLaterHeader">Saved Articles</span>
+              <div className="readLaterHeader">Saved Articles</div>
 
               <ReadLaterContainer readLater={this.state.readLater} handleReadArticle={this.handleReadArticle} handleDeleteArticle={this.handleDeleteArticle}/>
             </div>
