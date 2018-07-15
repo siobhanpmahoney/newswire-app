@@ -52,6 +52,7 @@ class App extends Component {
       }
     }))
     console.log("fetched" + this.state.articles.length)
+    console.log("fetched", this.state.articles)
   }
 
   addNewToState = (articles) => {
@@ -63,7 +64,6 @@ class App extends Component {
   }
 
   handleSaveArticleToReadLater = (art) => {
-    debugger
     let currentReadLaterState = this.state.readLater.slice(0)
     let currentLikedSections = this.state.likedSections.slice(0)
     let newReadLaterState = [...currentReadLaterState, art]
