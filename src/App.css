@@ -217,7 +217,7 @@ body {
   /* max-height: 80px; */
   text-overflow: ellipsis;
   display: -webkit-box;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   margin-top: 2px;
   text-align: left;
@@ -333,23 +333,49 @@ summary {
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  position: relative;
   justify-content: center;
   align-content: center;
-  padding: 1em;
+  align-self: center;
+  align-items: center;
+  position: relative;
+  padding-top: 18px;
+  line-height: 16px;
+  font-size: 14px;
+  text-align: center;
+  alignment: middle;
+}
 
-  font-size: 1.2em;
+.vl {
+  border-left: 1px solid #33333380;
+  line-height: 20px;
+  font-size: 18px;
 }
 
 button.toggle-feed {
 
   font-size: 100%;
-
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  box-sizing: content-box;
+  /* color: #999; */
+  color: #464545;
+  border: 1px solid #999;
+  font-weight: 500;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  width: fit-content;
 }
 
 button.toggle-feed#active {
   font-weight: 600;
-  text-decoration: underline;
+  /* background-color: #fce7dd; */
+  /* background-color: #fbfae0; */
+  /* color: #999; */
+  color: white;
+  background: #464545;
+  border: 1px solid #999;
 }
 
 button.toggle-feed#inactive {
@@ -523,7 +549,6 @@ button.readNow {
 button {
   margin: 3px 6px;
   padding: 0px 0px;
-  border-radius: 6px;
   border: none;
 }
 

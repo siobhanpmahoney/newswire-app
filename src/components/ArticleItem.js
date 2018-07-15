@@ -19,9 +19,9 @@ class ArticleItem extends React.Component {
     if (this.props.readLater.find((a) => {
       return a.title == this.props.article.title
     })) {
-      return (<i className="material-icons bookmark" style={{color:"#30bea2"}}>bookmark</i>)
+      return (<i className="material-icons bookmark" style={{color:"#79cac6"}}>bookmark</i>)
     } else {
-      return (<i className="material-icons bookmark_border" style={{color:"#30bea2"}} onClick={this.handleReadLater}>bookmark_border</i>)
+      return (<i className="material-icons bookmark_border" style={{color:"#79cac6"}} onClick={this.handleReadLater}>bookmark_border</i>)
     }
   }
 
