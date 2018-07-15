@@ -24,9 +24,9 @@ class RecommendedArticle extends React.Component {
     if (this.props.readLater.find((a) => {
       return a.title == this.props.recommendedArticle.title
     })) {
-      return (<i className="material-icons">bookmark</i>)
+      return (<i className="material-icons bookmark">bookmark</i>)
     } else {
-      return (<i className="material-icons" onClick={this.handleReadLater}>bookmark_border</i>)
+      return (<i className="material-icons bookmark_border" onClick={this.handleReadLater}>bookmark_border</i>)
     }
   }
 
@@ -51,7 +51,6 @@ class RecommendedArticle extends React.Component {
 
           <div className="wire-item-buttons">
             <span className="button read-now">
-              <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
             </span>
             <span className="button read-later">
               <button className="readLater">{this.dynamicIcon()}</button>

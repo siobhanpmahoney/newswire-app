@@ -32,12 +32,10 @@ class ReadLaterArticles extends React.Component {
               {this.props.readLaterArticle.section}
             </div>
                     <div className="readLaterArticleButtons">
-                      <button onClick={this.handleReadNow} className="readLaterArticleReadNowButton">
-                        <i className="material-icons" >open_in_new</i>
-                    </button>
+
 
                       <button onClick={this.deleteArticle} className="readLaterArticleDeleteButton">
-                        <i class="material-icons" style={{color:"#ef7979"}}>
+                        <i class="material-icons" style={{color:"#8D8D8D"}}>
 close
 </i>
                       </button>
@@ -46,7 +44,8 @@ close
 
 
           <div className="readLaterArticleTitle">
-            {this.props.readLaterArticle.title}
+            <a onClick={this.handleReadNow} className="readLaterArtictleTitleAnchor">
+              {this.props.readLaterArticle.title}</a>
           </div>
 
           <div className="readLaterArticleDate">

@@ -19,9 +19,9 @@ class ArticleItem extends React.Component {
     if (this.props.readLater.find((a) => {
       return a.title == this.props.article.title
     })) {
-      return (<i className="material-icons" style={{color:"#30bea2"}}>bookmark</i>)
+      return (<i className="material-icons bookmark" style={{color:"#30bea2"}}>bookmark</i>)
     } else {
-      return (<i className="material-icons" style={{color:"#30bea2"}} onClick={this.handleReadLater}>bookmark_border</i>)
+      return (<i className="material-icons bookmark_border" style={{color:"#30bea2"}} onClick={this.handleReadLater}>bookmark_border</i>)
     }
   }
 
@@ -33,7 +33,9 @@ class ArticleItem extends React.Component {
       <div className="wire-item-container">
         <div className="wire-item-all-text">
         <div className="wire-item-section">{this.props.article.section}</div>
-          <div className="wire-item-title">{this.props.article.title}</div>
+          <div className="wire-item-title" onClick={this.handleReadNow}>
+            {this.props.article.title}
+          </div>
           <div className="wire-item-abstract">
             {this.props.article.abstract}
           </div>
@@ -41,7 +43,7 @@ class ArticleItem extends React.Component {
             <div className="wire-item-date">{articleDate}</div>
           <span className="wire-item-buttons">
 
-              <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button>
+
 
 
               <button className="readLater">{this.dynamicIcon()}</button>

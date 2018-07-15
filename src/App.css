@@ -181,7 +181,15 @@ body {
   text-transform: uppercase;
   text-align: left;
   display: block;
+  box-sizing: content-box;
+  color: #33333380;
+  border: 1px solid #33333380;
+  font-weight: 500;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  width: fit-content;
 }
+
 
 .wire-item-title {
   line-height: 28px;
@@ -190,9 +198,18 @@ body {
   font-weight: 600;
   /* transform: translateY(-.72px); */
   letter-spacing: -.42px;
+  margin-top: 2px;
   margin-bottom: 2px;
   position: block;
   color: #292929;
+  cursor: pointer;
+}
+
+
+
+.wire-item-title:hover {
+  /* text-decoration: underline; */
+  color: #ef7777;
 }
 
 
@@ -212,10 +229,6 @@ body {
 
 
 
-.wire-item-container:hover, .readLaterArticleItem:hover, .recommendedArticleItem:hover {
-  transform: scale3d(1.02,1.02,1.1);
-}
-
 
 
 .wire-item-info {
@@ -224,7 +237,7 @@ body {
 .wire-item-img-section {
   display: inline-flex;
   flex-direction: column;
-  max-width: 25%;
+  max-width: 28%;
   height: auto;
   justify-content: center;
   flex: 1 1 auto;
@@ -416,9 +429,10 @@ button.toggle-feed#inactive {
 .readLaterArticleSection {
   font-size: 12px;
   box-sizing: border-box;
-  color: #292929;
+  color: #33333380;
   letter-spacing: 1px;
-  border: 1px solid black;
+  border: 1px solid #33333380;
+  font-weight: 500;
   margin-bottom: 8px;
   padding: 3px 8px;
   text-transform: uppercase;
@@ -458,6 +472,15 @@ button.toggle-feed#inactive {
   color: #999;
 }
 
+.readLaterArticleTitle {
+  cursor: pointer;
+}
+
+.readLaterArticleTitle:hover {
+  /* text-decoration: underline; */
+  color: #ef7777;
+;
+}
 
 
 h1, h2, h3, h4 {
@@ -518,8 +541,9 @@ button {
   padding: 1px 2px;
   border-radius: 6px;
   border: none;
-  font-size: 15px;
+  font-size: 17px;
   display:inline;
+  cursor: pointer;
 }
 
 
@@ -530,12 +554,12 @@ font-size: 15px;
 
 }
 
-
+.bookmark, .bookmark_border {
+  font-size: 24px;
+}
 
 button.delete {
   border: none;
-
-
   display: inline;
 }
 
