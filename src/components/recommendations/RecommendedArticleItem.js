@@ -38,6 +38,13 @@ class RecommendedArticle extends React.Component {
     return (
       <div className="wire-item-container-block-wrapper">
         <div className="wire-item-container">
+
+          <div className="wire-item-img-section">
+            {this.props.recommendedArticle.media && this.props.recommendedArticle.media[0]["media-metadata"] &&
+              <img className="wire-item-img" src={this.props.recommendedArticle.media[0]["media-metadata"][1].url } alt=""  />
+            }
+          </div>
+
           <div className="wire-item-all-text">
             <div className="wire-item-section">
               {this.props.recommendedArticle.section}
@@ -66,11 +73,7 @@ class RecommendedArticle extends React.Component {
             </div>
 
           </div>
-          <div className="wire-item-img-section">
-            {this.props.recommendedArticle.media && this.props.recommendedArticle.media[0]["media-metadata"] &&
-              <img className="wire-item-img" src={this.props.recommendedArticle.media[0]["media-metadata"][1].url } alt=""  />
-            }
-          </div>
+
         </div>
 
       </div>

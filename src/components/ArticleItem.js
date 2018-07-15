@@ -31,6 +31,16 @@ class ArticleItem extends React.Component {
     return (
       <div className="wire-item-container-block-wrapper">
         <div className="wire-item-container">
+
+          <div className="wire-item-img-section">
+
+            {this.props.article.multimedia &&
+              <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
+            }
+
+
+          </div>
+
           <div className="wire-item-all-text">
             <div className="wire-item-section">
               {this.props.article.section}
@@ -55,14 +65,6 @@ class ArticleItem extends React.Component {
                 </button>
               </span>
             </div>
-          </div>
-          <div className="wire-item-img-section">
-
-            {this.props.article.multimedia &&
-              <img src={this.props.article.multimedia[1].url} alt="" className="wire-item-img" />
-            }
-
-
           </div>
 
 
