@@ -17,25 +17,47 @@ class ReadLaterArticles extends React.Component {
   formattedDate = (date) => {
     let pubDate = new Date(date)
     return pubDate.toLocaleDateString()
-}
+  }
 
   render() {
     return (
       <div className="readLaterArticleItem">
         <div className="readLaterArticleItemContent">
-          <div className="readNowButtons">
-            <span className="button read-now">
-    <button onClick={this.handleReadNow} className="readNow"><i className="material-icons">open_in_new</i></button></span>
-            <span className="button delete"><button onClick={this.deleteArticle} className="delete"><i className="material-icons">delete_forever</i></button></span>
-          </div><br />
-        <span className="readLaterInfo" style={{fontFamily:"Open Sans"}}>{this.props.readLaterArticle.section} | {this.formattedDate(this.props.readLaterArticle.updated_date)}</span>
 
-        <span className="readLaterArticleTitle">{this.props.readLaterArticle.title}</span>
+
+
+
+          <div className="readLaterArticleTop">
+            <div className="readLaterArticleSection">
+              {this.props.readLaterArticle.section}
+            </div>
+                    <div className="readLaterArticleButtons">
+                      <button onClick={this.handleReadNow} className="readLaterArticleReadNowButton">
+                        <i className="material-icons">open_in_new</i>
+                    </button>
+
+                      <button onClick={this.deleteArticle} className="readLaterArticleDeleteButton">
+                        <i className="material-icons">delete_forever</i>
+                      </button>
+                    </div>
 </div>
-    </div>
-  )
 
-}
+
+          <div className="readLaterArticleTitle">
+            {this.props.readLaterArticle.title}
+          </div>
+
+          <div className="readLaterArticleDate">
+            {this.formattedDate(this.props.readLaterArticle.updated_date)}
+          </div>
+
+
+
+        </div>
+      </div>
+    )
+
+  }
 }
 
 export default ReadLaterArticles;

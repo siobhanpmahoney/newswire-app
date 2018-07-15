@@ -258,16 +258,13 @@ body {
 }
 
 .readLaterArticleItem {
-  border-radius: 5px;
   padding: 0.25em;
-  margin: 12px 0px;
-  font-size: 0.75em;
   max-height: 220px;
   min-height: 80px;
   width: 98%;
   display: block;
-
-  transition: all 0.3s ease-in;
+  border-bottom: solid 1px #292929;
+  padding: 16px 0px
 }
 
 .readLaterArticleItemContent {
@@ -375,13 +372,8 @@ button.toggle-feed#inactive {
 
 
 .readLaterInfo {
-  font-size: 11px;
-
   font-weight: 400;
-  padding: 0.2em 0.25em 0.5em 0.25em;
   display: inline;
-  float: left;
-
 }
 
 .viewHistoryHeader, .readLaterHeader {
@@ -396,19 +388,52 @@ button.toggle-feed#inactive {
   float: left;
   display: flex;
   flex-direction: column;
-  clear: both;
+  margin-bottom: 48px;
+  background-color: white;
+  margin-left: 24px;
 }
 
+.readLaterArticleSection {
+  font-size: 12px;
+  box-sizing: border-box;
+  color: #33333380;
+  letter-spacing: 1px;
+  border: 1px solid black;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: flex-start;
+  float: left;
 
+}
+
+.readLaterArticleTop {
+  display: inline-flex;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.readLaterArticleButtons {
+  align-items: flex-end;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
 
 .readLaterArticleTitle {
-  font-size: 12px;
-
-  font-weight: 440;
-  padding: 0.1em 0.2em;
-  margin: 0px 0px 6px 0px;
-  float: left;
   display: inline;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.readLaterArticleDate {
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 8px;
+  text-transform: uppercase;
+  color: #999;
 }
 
 
@@ -458,9 +483,10 @@ button {
 }
 
 .readNowButtons {
-  float: right;
-  display: inline;
-
+  display: inline-flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+  text-align: right;
 }
 
 
