@@ -89,7 +89,7 @@ startInterval = () => {
     if (this.props.likedSections.length == 0) {
       return <h3>Save or view articles from the Latest feed to get recommendations!</h3>
     }
-    else if (!!this.state.loading && this.props.articles != []) {
+    else if (this.state.loading && this.props.likedSections.length > 0) {
       return <div>Loading...</div>
     } else {
 
