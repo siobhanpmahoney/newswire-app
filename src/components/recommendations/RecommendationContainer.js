@@ -12,6 +12,7 @@ class RecommendationContainer extends React.Component {
     super(props)
 
     this.state = {
+      loading: true,
       recommendedArticles: []
     }
   }
@@ -20,10 +21,11 @@ class RecommendationContainer extends React.Component {
 
     for (let i of this.props.likedSections) {
       let currentState = this.state.recommendedArticles.slice(0)
-      fetch(`https://api.nytimes.com/svc/mostpopular/v2/mostviewed/${i}/7.json?api-key=${nytimes_key}`)
+      fetch(`https://content.api.nytimes.com/svc/mostpopular/v2/mostviewed/${i}/7.json?api-key=${nytimes_key}`)
      .then(response => response.json())
      .then(json => this.setState({
-        recommendedArticles: [...currentState, json.results]
+        recommendedArticles: [...currentState, json.results],
+        loading: false
        // recommendedArticles: Object.assign({},
        //   currentState,
        //   {
@@ -42,7 +44,7 @@ fetchRecommendedArticles = () => {
 
   for (let i of this.props.likedSections) {
     console.log("section of choice", i)
-    let url = `https://api.nytimes.com/svc/mostpopular/v2/mostviewed/${i}/7.json?api-key=${nytimes_key}`
+    let url = `https://content.api.nytimes.com/svc/mostpopular/v2/mostviewed/${i}/7.json?api-key=${nytimes_key}`
     fetch(url)
       .then(response=> response.json())
       .then(json => json.results.slice(0, 10).map((newArt) => {
@@ -81,8 +83,15 @@ startInterval = () => {
 
 
   render () {
+    console.log(!!this.props.likedSections)
     console.log("in recs", this.state.recommendedArticles)
     console.log("in recs", this.props)
+    if (this.props.likedSections.length == 0) {
+      return <h3>Save or view articles from the Latest feed to get recommendations!</h3>
+    }
+    else if (!!this.state.loading && this.props.articles != []) {
+      return <div>Loading...</div>
+    } else {
 
     return (
       <div className="wire-container">
@@ -95,6 +104,7 @@ startInterval = () => {
 
       </div>
     )
+  }
   }
 }
 
