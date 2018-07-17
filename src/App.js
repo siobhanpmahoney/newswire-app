@@ -9,7 +9,7 @@ import ReadNowContainer from './components/ReadNowContainer'
 import RecommendationContainer from './components/recommendations/RecommendationContainer'
 
 
-const URL = `https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
+const URL = `https://content.api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
 
 // var ls = require('local-storage')
 
