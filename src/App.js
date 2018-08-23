@@ -163,14 +163,6 @@ class App extends Component {
   }
 }
 
-// fetchByFeedType = () => {
-//   if (this.state.articleWireType == "latest") {
-//     this.fetchArticles
-//   } else if (this.state.articleWireType == "recommended") {
-//     this.fetchRecommendedArticles
-//   }
-//   this.renderFeedComponent
-// }
 
 toggleFeedType = (event) => {
   let v = event.target.value

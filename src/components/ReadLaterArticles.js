@@ -31,16 +31,16 @@ class ReadLaterArticles extends React.Component {
             <div className="readLaterArticleSection">
               {this.props.readLaterArticle.section}
             </div>
-                    <div className="readLaterArticleButtons">
+            <div className="readLaterArticleButtons">
 
 
-                      <button onClick={this.deleteArticle} className="readLaterArticleDeleteButton">
-                        <i class="material-icons" style={{color:"#8D8D8D"}}>
-close
-</i>
-                      </button>
-                    </div>
-</div>
+              <button onClick={this.deleteArticle} className="readLaterArticleDeleteButton">
+                <i class="material-icons" style={{color:"#8D8D8D"}}>
+                  close
+                </i>
+              </button>
+            </div>
+          </div>
 
 
           <div className="readLaterArticleTitle">
