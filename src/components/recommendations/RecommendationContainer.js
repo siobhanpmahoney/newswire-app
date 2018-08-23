@@ -18,6 +18,7 @@ class RecommendationContainer extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchRecommendedArticles()
     this.props.startInterval(this.props.fetchRecommendedArticles)
   }
 
