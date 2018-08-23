@@ -3,6 +3,11 @@ import ArticleItem from './ArticleItem';
 
 class ArticleContainer extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchArticles()
+    this.props.startInterval(this.props.fetchArticles)
+  }
+
   render() {
     return (
 
