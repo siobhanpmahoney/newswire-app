@@ -152,7 +152,7 @@ class App extends Component {
       this.fetchArticles
       return (
 
-        <ArticleContainer articles={this.state.latestArticles}  readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
+        <ArticleContainer articles={this.state.latestArticles} fetchArticles={this.fetchArticles} startInterval={this.startInterval} readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
 
       )
     } else {
