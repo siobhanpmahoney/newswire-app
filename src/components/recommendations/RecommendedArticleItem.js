@@ -31,7 +31,6 @@ class RecommendedArticle extends React.Component {
   }
 
   render() {
-    console.log(this.props.recommendedArticle)
 
     const articleDate = `${(new Date(this.props.recommendedArticle.updated_date)).getMonth() + 1}/${(new Date(this.props.recommendedArticle.updated_date)).getDate()}/${(new Date(this.props.recommendedArticle.updated_date)).getFullYear()}`;
 

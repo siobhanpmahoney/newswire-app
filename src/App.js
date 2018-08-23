@@ -9,7 +9,9 @@ import ReadNowContainer from './components/ReadNowContainer'
 import RecommendationContainer from './components/recommendations/RecommendationContainer'
 
 
-const URL = `https://content.api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
+const LATEST_URL = `https://content.api.nytimes.com/svc/news/v3/content/all/all.json?api-key=${nytimes_key}`;
+
+const REC_URL = (section) => `https://content.api.nytimes.com/svc/mostpopular/v2/mostviewed/${section}/7.json?api-key=${nytimes_key}`
 
 // var ls = require('local-storage')
 
@@ -18,7 +20,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      articles: [],
+      latestArticles: [],
+      recommendedArticles: [],
       readNow: [],
       readLater: [],
       likedSections: [],
@@ -27,40 +30,57 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(URL)
+    fetch(LATEST_URL)
     .then(response => response.json())
     .then(json => this.setState({
-      articles: json.results,
+      latestArticles: json.results,
       readNow: ls.get('readNow') || [],
       readLater: ls.get('readLater') || [],
       likedSections: ls.get('likedSections') || [],
       articleWireType: "latest",
     }));
-    this.startInterval()
+    this.startInterval(this.fetchArticles)
+
   }
 
   fetchArticles = () => {
-    fetch(URL)
+    fetch(LATEST_URL)
     .then(response=> response.json())
     .then(json => json.results.map((newArt) => {
-      if (!this.state.articles.find((a) => a.title === newArt.title)) {
+      if (!this.state.latestArticles.find((a) => a.title === newArt.title)) {
         this.setState((state, props) => {
           return {
-            articles: [newArt,... state.articles]
+            latestArticles: [newArt,... state.latestArticles]
           }
         })
       }
     }))
-    console.log("fetched" + this.state.articles.length)
-    console.log("fetched", this.state.articles)
   }
 
-  addNewToState = (articles) => {
-    articles.filter((a) => !this.state.articles.includes(a))
+  fetchRecommendedArticles = () => {
+    let currentState = this.state.recommendedArticles.slice(0)
+
+    for (let sec of this.state.likedSections) {
+      fetch(REC_URL(sec))
+        .then(response=> response.json())
+        .then(json => json.results.slice(0, 10).map((newArt) => {
+        if (!this.state.recommendedArticles.find((a) => a.title === newArt.title) && !this.state.latestArticles.find((feed) => feed.title === newArt.title)) {
+          this.setState((state, props) => {
+            return {
+            recommendedArticles: [newArt,...state.recommendedArticles]
+          }
+          })
+        }
+      }))
+    }
   }
 
-  startInterval = () => {
-    this.interval = setInterval(this.fetchArticles, 6000)
+  addNewToState = (articles, articleState) => {
+    articles.filter((a) => !this.state[articleState].includes(a))
+  }
+
+  startInterval = (fetchArticleFunction) => {
+    this.interval = setInterval(fetchArticleFunction, 1000)
   }
 
   handleSaveArticleToReadLater = (art) => {
@@ -107,7 +127,7 @@ class App extends Component {
       win.focus();
     }
     else {
-      console.log(this.state.readNow.length)
+
       alert("Looks like you've hit your limit of 15 free articles this month. Please sign up for one of the subscription options offered by the Times.")
     }
 
@@ -126,24 +146,28 @@ class App extends Component {
     ls.set('readLater', truncatedList)
   }
 
-  renderFeedType = () => {
+  renderFeedComponent = () => {
     if (this.state.articleWireType === "latest") {
+      this.fetchArticles
       return (
 
-        <ArticleContainer articles={this.state.articles} readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
+        <ArticleContainer articles={this.state.latestArticles}  readLater={this.state.readLater} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} />
 
       )
     } else {
-      return ( <RecommendationContainer articles={this.state.articles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle}/>
+    this.fetchRecommendedArticles
+
+      return ( <RecommendationContainer fetchRecommendedArticles={this.fetchRecommendedArticles} recommendedArticles={this.state.recommendedArticles} readNow={this.state.readNow} readLater={this.state.readLater} likedSections={this.state.likedSections} handleSaveArticleToReadLater={this.handleSaveArticleToReadLater} handleReadArticle={this.handleReadArticle} startInterval={this.startInterval}/>
 
     )
   }
 }
 
+
 toggleFeedType = (event) => {
   let v = event.target.value
   this.setState({
-    articleWireType: v
+    articleWireType: v,
   })
 }
 
@@ -160,9 +184,6 @@ toggleButtonId = (type) => {
 
 
 render() {
-  console.log(this.state.readNow.length)
-  console.log("likedSections", this.state.likedSections)
-  console.log(nytimes_key)
   return (
     <div className="news-wire-top wrapper">
       <div className="header"><span className="header-text">NYTimes NewsWire</span></div>
@@ -194,7 +215,7 @@ render() {
             <button className="toggle-feed"  id={this.toggleButtonId("recommended")} onClick={this.toggleFeedType}  value="recommended">Recommended</button>
           </div>
 
-          {this.renderFeedType()}
+          {this.renderFeedComponent()}
 
         </div>
 

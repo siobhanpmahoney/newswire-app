@@ -35,7 +35,7 @@ class ArticleItem extends React.Component {
           <div className="wire-item-img-section">
 
             {this.props.article.multimedia &&
-              <img src={this.props.article.multimedia[2].url} alt="" className="wire-item-img" />
+              <img src={this.props.article.multimedia[3].url} alt="" className="wire-item-img" />
             }
 
 
