@@ -39,7 +39,7 @@ class App extends Component {
       likedSections: ls.get('likedSections') || [],
       articleWireType: "latest",
     }));
-    this.startInterval(this.fetchArticles)
+  
 
   }
 
