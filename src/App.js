@@ -55,7 +55,7 @@ class App extends Component {
         })
       }
     }))
-  
+
   }
 
   fetchRecommendedArticles = () => {
@@ -81,7 +81,7 @@ class App extends Component {
   }
 
   startInterval = (fetchArticleFunction) => {
-    this.interval = setInterval(fetchArticleFunction, 1000)
+    this.interval = setInterval(fetchArticleFunction, 10000)
   }
 
   handleSaveArticleToReadLater = (art) => {
